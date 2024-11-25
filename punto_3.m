@@ -12,11 +12,13 @@ rng(seed);
 
 
 
+
+
 %%%%%%%% SECOND POINT %%%%%%%%
 
-d = 1;    % alternative: 3,4,5
+d = 3;    % alternative: 3,4,5
 
-n = 10^d;
+n = 15;     % n = 10^d
 
 %% for the first function we choose the Chainedd Rosenbrock function
 
@@ -34,14 +36,12 @@ for i = 2:1:(n-1)
 end
 f1_grad_comp{n} = @(x) -200*(x(n-1)^2 - x(n));
 
-gradf1 = @(x) cell2mat(cellfun(@(f1_grad_comp) f1_grad_comp(x), f1_grad_comp, 'UniformOutput', false)); 
+gradf1 = @(x) cell2mat(cellfun(@(f1_grad_comp) f1_grad_comp(x), f1_grad_comp, 'UniformOutput', false));
 
-% hessian construction
-
-% from calcolus i can see that the hessian is almost diagonal 
+% computing the Hessian in sparse mode
 
 A1 = cell(1, n);
-B1 = cell(1, n-1);
+B1 = cell(1, n);
 
 A1{1} = @(x) 1200*x(1)^2 -400*x(2) + 2;
 B1{1} = @(x) -400*x(1);
@@ -50,10 +50,12 @@ for i = 2:1:(n-1)
     B1{i} = @(x) -400*x(i);
 end
 A1{n} = @(x) 200;
+B1{n} = @(x) 0; %forced by spdiags
 
-Hessian_f1 = @(x) diag(cell2mat(cellfun(@(A1) A1(x), A1, 'UniformOutput', false))) + diag(cell2mat(cellfun(@(B1) B1(x), B1, 'UniformOutput', false)),-1) + diag(cell2mat(cellfun(@(B1) B1(x), B1, 'UniformOutput', false)),+1); 
-
-
+Hessian_f1 = @(x) spdiags([cell2mat(cellfun(@(B1) B1(x), B1, 'UniformOutput', false)), ...
+                           cell2mat(cellfun(@(A1) A1(x), A1, 'UniformOutput', false)), ...
+                           cell2mat(cellfun(@(B1) B1(x), B1, 'UniformOutput', false))], ...
+                          [-1, 0, 1], n, n);
 
 %%%%%%%% END SECOND POINT
 
@@ -62,4 +64,28 @@ Hessian_f1 = @(x) diag(cell2mat(cellfun(@(A1) A1(x), A1, 'UniformOutput', false)
 
 
 %%%%%%%% THIRD POINT %%%%%%%%
+
+% construction of the test point x0 for f1:
+
+x_f1 = zeros(n,1);
+for i= 1:1:n
+    if mod(i,2) == 1
+        x_f1(i) = -1.2;
+    else
+        x_f1(i) = 1.0;
+    end
+end
+
+% construction of the 10 points 
+
+X_f1 = (x_f1*(ones(n,1))')';       % matrix that copy for each column the vector x_f1
+X_f1 = X_f1(:,1:1:10);             % rescale of the matrix
+
+error = rand(n,10);     % matrix of random variable to add to the starting point 
+X_f1 = X_f1 + error;    % each column of this vector represent a starting point
+
+%%%%%%%% END THIRD POINT %%%%%%%%
+
+rho = 0.5;
+c = 10^-4;
 
