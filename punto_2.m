@@ -37,6 +37,7 @@ disp(['xk: ', mat2str(xk_mnm)])
 disp(['f(xk): ', num2str(fk_mnm)])
 disp(['N. of Iterations: ', num2str(k_mnm),'/',num2str(kmax), ';'])
 disp('************************************')
+
 %% PLOTS (BACKTRACK)
 
 f_meshgrid = @(X, Y) arrayfun(@(i) f_Rosenbrock([X(i); Y(i)]), 1:numel(X));
