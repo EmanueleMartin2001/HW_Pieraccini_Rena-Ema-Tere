@@ -92,8 +92,8 @@ X_f1 = X_f1 + error;    % each column of this vector represent a starting point
 rho = 0.5;
 c = 1e-4;
 
-kmax = 1000;
-tolgrad = 1e-16;
+kmax = 10;
+tolgrad = 1e-5;
 btmax = 1;
 
 % calling the method:
@@ -110,7 +110,4 @@ btmax = 1;
 norm(xk-xk1)
 fk1
 fk
-gradfk_norm1
-gradfk_norm
-k1
-k
+gra
