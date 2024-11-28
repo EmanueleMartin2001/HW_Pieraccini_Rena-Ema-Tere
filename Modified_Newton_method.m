@@ -48,14 +48,12 @@ fk = f(xk);
 gradfk = gradf(xk);
 k = 0;
 gradfk_norm = norm(gradfk);
-delta = sqrt(eps);   % set the delta for the Modified Newton method
 
 while k < kmax && gradfk_norm >= tolgrad
 
     Hk = Hessf(xk);   % compute the Hessian
-    lambda_min = eigs(Hk,1,'smallestabs');  % it returns the minimum eigenvalue of the matrix Hk
-    tauk = max(0,delta-lambda_min);    % computation of tauk
-    Bk = Hk + tauk*diag(ones(length(gradfk))); % computation of Bk as a positive definite matrix
+    tao = CholeskyAddIdentity(Hk);
+    Bk = Hk + tao*diag(ones(length(x0),1)); % computation of Bk as a positive definite matrix
 
 
     % Compute the descent direction as solution of
