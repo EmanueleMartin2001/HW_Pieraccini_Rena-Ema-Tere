@@ -20,6 +20,8 @@ d = 3;    % alternative: 3,4,5
 
 n = 10^d;
 
+%% for the first function we choose the Chainedd Rosenbrock function
+
 [f1,gradf1,Hessf1] = first_function(n);
 
 [f2,gradf2, Hessf2] = second_function(n);
@@ -43,14 +45,6 @@ for i= 1:1:n
     end
 end
 
-% construction of the test point for f2
-
-x_f2 = zeros(n,1);
-for l = 1:1:n
-    x_f2(l) = l;
-end
-
-
 % construction of the 10 points for f1
 
 X_f1 = (x_f1*(ones(n,1))')';       % matrix that copy for each column the vector x_f1
@@ -61,17 +55,7 @@ X_f1 = X_f1 + error;    % each column of this vector represent a starting point
 
 % construction of the 10 points for f2 
 
-X_f2 = (x_f2*(ones(n,1))')';
-X_f2 = X_f2(:,1:1:10);
-
-error = rand(n,10);
-X_f2 = X_f2 + error;
-
 %%%%%%%% END THIRD POINT %%%%%%%%
-
-
-
-%%%%%%% START FOURTH POINT %%%%%%%%
 
 rho = 0.5;
 c = 1e-4;
@@ -90,5 +74,5 @@ btmax = 40;
 
 
 [x2k, f2k, gradf2k_norm, k2, x2seq, b2tseq] = ...
-    Modified_Newton_method(X_f2(:,2), f2, gradf2, Hessf2, ...
+    Modified_Newton_method(X_f1(:,2), f2, gradf2, Hessf2, ...
     kmax, tolgrad, c, rho, btmax);
