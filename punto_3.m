@@ -50,11 +50,11 @@ C1{1} = @(x) 0; %forced by spdiags
 for i = 2:1:(n-1) 
     A1{i} = @(x) 1200*x(i)^2 - 400*x(i+1) + 202;
     B1{i} = @(x) -400*x(i);
-    C1{i} = @(x) -400*x(i);
+    C1{i} = @(x) -400*x(i-1);
 end
 A1{n} = @(x) 200;
 B1{n} = @(x) 0; %forced by spdiags
-C1{n} = @(x) -400*x(n);
+C1{n} = @(x) -400*x(n-1);
 
 Hessf1 = @(x) spdiags (cell2mat(cellfun(@(B1) B1(x), B1, 'UniformOutput', false)),-1, n,n)+ ...
                 spdiags (cell2mat(cellfun(@(A1) A1(x), A1, 'UniformOutput', false)),0, n,n)+...
@@ -93,24 +93,20 @@ rho = 0.5;
 c = 1e-4;
 
 kmax = 1000;
-tolgrad = 1e-16;
-btmax = 1;
+tolgrad = 1e-6;
+btmax = 40;
+
 
 % calling the method:
 
 
 [xk, fk, gradfk_norm, k, xseq, btseq] = ...
-    Modified_Newton_method(X_f1(:,1), f1, gradf1, Hessf1, ...
+    Modified_Newton_method(X_f1(:,2), f1, gradf1, Hessf1, ...
     kmax, tolgrad, c, rho, btmax);
 
 [xk1, fk1, gradfk_norm1, k1, xseq1, btseq1] = ...
-    newton_bcktrck(X_f1(:,1), f1, gradf1, Hessf1, ...
+    newton_bcktrck(X_f1(:,2), f1, gradf1, Hessf1, ...
     kmax, tolgrad, c, rho, btmax);
 
 norm(xk-xk1)
-fk1
-fk
-gradfk_norm1
-gradfk_norm
-k1
-k
+
