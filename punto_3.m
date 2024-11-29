@@ -24,6 +24,8 @@ n = 10^d;
 
 [f2,gradf2, Hessf2] = second_function(n);
 
+[f3, gradf3, Hessf3] = third_function(n,10);
+
 %%%%%%%% END SECOND POINT
 
 
@@ -91,4 +93,8 @@ btmax = 40;
 
 [x2k, f2k, gradf2k_norm, k2, x2seq, b2tseq] = ...
     Modified_Newton_method(X_f2(:,2), f2, gradf2, Hessf2, ...
+    kmax, tolgrad, c, rho, btmax);
+
+[x3k, f3k, gradf3k_norm, k3, x3seq, b3tseq] = ...
+    Modified_Newton_method(X_f2(:,10), f3, gradf3, Hessf3, ...
     kmax, tolgrad, c, rho, btmax);

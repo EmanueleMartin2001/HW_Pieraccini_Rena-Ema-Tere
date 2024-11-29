@@ -1,0 +1,29 @@
+function [f3] = third_function(n,rho)
+
+    h = 1/(n+1);
+
+    fk = cell(n,1);
+    fk{1} = @(x) 2*x(1) + rho * h^2 * sinh(rho * x(1)) - x(2);
+    for k = 2:1:n-1
+        fk{k} = @(x) 2*x(k) + rho * h^2 * sinh(rho * x(k)) - x(k-1) + x(k+1);
+    end
+    fk{n} = @(x) 2*x(n) + rho * h^2 * sinh(rho * x(n)) - x(n-1) - 1;
+    
+    f3 = @(x) 0.5*sum(cell2mat(cellfun(@(fk) fk(x), fk, 'UniformOutput', false)).^2);
+
+    grad_com = cell(n,1);
+    grad_com{1} = @(x) sum([2+rho^2*h^2*cosh(rho*x(1)); -1]);
+    grad_com{2} = @(x) sum([-1; 2+rho^2*h^2*cosh(x(2)*rho);-1]);
+    for k = 3:1:n-2
+        grad_com{k} = @(x) sum([-1; 2+rho^2*h^2*cosh(x(k)*rho);-1]);
+    end
+    grad_com{n-1} = @(x) sum([-1; 2+rho^2*h^2*cosh(x(n-1)*rho);-1]);
+    grad_com{n} = @(x) sum([2+rho^2*h^2*cosh(rho*x(n)); -1]);
+
+    gradf2 = @(x) cell2mat(cellfun(@(grad_com) grad_com(x), grad_com, 'UniformOutput', false));
+
+   
+
+
+end
+
