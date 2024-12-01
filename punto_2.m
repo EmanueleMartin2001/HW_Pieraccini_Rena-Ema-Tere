@@ -1,4 +1,4 @@
-
+%% MODIFIED NEWTON METHOD
 
 f_Rosenbrock = @(x) 100*(x(2)-x(1)^2)^2 + (1-x(1))^2;
 
@@ -11,6 +11,7 @@ rho = 0.5;
 c1 = 1e-4;
 
 x_0_1 = [-1.2 ; 1];
+% x_0_1 = [1.2 ; 1.2];
 
 kmax = 100;
 
@@ -29,7 +30,7 @@ t = toc;
 
 disp('**** MODIFIED NEWTON METHOD: FINISHED *****')
 
-disp(['Time: ', num2str(t), ' secondi']);
+disp(['Time: ', num2str(t), ' seconds']);
 
 disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
 disp('************************************')
@@ -65,7 +66,7 @@ hold off
 fig2 = figure();
 % Contour plot with curve levels for each point in xseq
 % ATTENTION: actually, the mesh [X, Y] is too coarse for plotting the last
-% level curves corresponding to the last point in xseq (check it zooming
+% level curves corresponding to the last point in xseq (check it by zooming
 % the image).
 [C2, ~] = contour(X, Y, Z, fk_mnm_seq);
 hold on
@@ -79,3 +80,49 @@ surf(X, Y, Z,'EdgeColor','none')
 hold on
 plot3(xseq_mnm(1, :), xseq_mnm(2, :), fk_mnm_seq, 'r--*')
 hold off
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% NELDER MEAD METHOD
+
+f_Rosenbrock = @(x) 100*(x(2)-x(1)^2)^2 + (1-x(1))^2;
+
+X = [1.2,1.2; -1.2,1; 0,1];
+%X = [8,14; -100,1; 0,16] %(higher distance from x_opt)
+
+kmax = 100;
+
+tol = 1e-5;
+
+rho = 1;
+
+chi = 2;
+
+gamma = 0.5;
+
+sigma = 0.5;
+
+%% RUN NELDER-MEAD METHOD
+
+disp('**** NELDER MEAD METHOD : START *****')
+
+tic;
+[x_opt, fx_opt, k, x_seq, singular] = Nelder_Mead(X, f_Rosenbrock, kmax, tol, rho, chi, gamma, sigma) 
+t = toc;
+
+disp('**** NELDER MEAD METHOD: FINISHED *****')
+
+disp(['Time: ', num2str(t), ' seconds']);
+
+disp('**** NELDER MEAD METHOD : RESULTS *****')
+disp('************************************')
+disp(['x_opt: ', mat2str(x_opt)])
+disp(['f(x_opt): ', num2str(fx_opt)])
+disp(['N. of Iterations: ', num2str(k),'/',num2str(kmax), ';'])
+disp('************************************')

@@ -7,6 +7,7 @@ function [f1, gradf1, Hessf1] = first_function(n)
     f1_grad_comp = cell(n,1);
     
     f1_grad_comp{1} = @(x) 400*x(1)^3 -400*x(1)*x(2) + 2*x(1) - 2;
+
     for i = 2:1:(n-1)
         f1_grad_comp{i} = @(x) 400*x(i)^3 -200*x(i-1)^2 - 400*x(i+1)*x(i) + 202*x(i) -2;
     end

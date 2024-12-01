@@ -9,7 +9,7 @@ function [xk, fk, gradfk_norm, k, xseq, btseq] = ...
 % Function that performs the Newton optimization method, using
 % backtracking strategy for the step-length selection.
 % 
-% There also the ceck in case of an Hessian not definite positive
+% There is also the check in case of an Hessian not definite positive
 %
 % INPUTS:
 % x0 = n-dimensional column vector;

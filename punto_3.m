@@ -8,7 +8,7 @@ seed = min([341965, 343316, 284817]);
 
 rng(seed);
 
-%%%%%%%% END FIRST POIN %%%%%%%% 
+%%%%%%%% END FIRST POINT %%%%%%%% 
 
 
 
@@ -20,11 +20,11 @@ d = 3;    % alternative: 3,4,5
 
 n = 10^d;
 
-[f1,gradf1,Hessf1] = first_function(n);
+[f1,gradf1,Hessf1] = first_function(n); % Problem 1
 
-[f2,gradf2, Hessf2] = second_function(n);
+[f2,gradf2, Hessf2] = second_function(n); % Problem 27
 
-[f3, gradf3, Hessf3] = third_function(n,10);
+[f3, gradf3, Hessf3] = third_function(n,10); %Problem 64
 
 %%%%%%%% END SECOND POINT
 
@@ -75,6 +75,8 @@ X_f2 = X_f2 + error;
 
 %%%%%%% START FOURTH POINT %%%%%%%%
 
+%% MODIFIED NEWTON METHOD
+
 rho = 0.5;
 c = 1e-4;
 
@@ -98,3 +100,5 @@ btmax = 40;
 [x3k, f3k, gradf3k_norm, k3, x3seq, b3tseq] = ...
     Modified_Newton_method(X_f2(:,10), f3, gradf3, Hessf3, ...
     kmax, tolgrad, c, rho, btmax);
+
+

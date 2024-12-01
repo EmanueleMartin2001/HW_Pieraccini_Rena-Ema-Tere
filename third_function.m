@@ -29,11 +29,5 @@ function [f3, gradf3, Hessf3] = third_function(n,rho)
 
     Hessf3 = @(x) spdiags (cell2mat(cellfun(@(A) A(x), A, 'UniformOutput', false)),0, n,n);
 
-
-
-
-   
-
-
 end
 
