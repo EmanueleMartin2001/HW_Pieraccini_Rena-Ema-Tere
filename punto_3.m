@@ -24,7 +24,7 @@ n = 10^d;
 
 [f2,gradf2, Hessf2] = second_function(n); % Problem 27
 
-[f3, gradf3, Hessf3] = third_function(n,10); %Problem 64
+[f3, gradf3, Hessf3] = third_function(n,0); %Problem 64
 
 %%%%%%%% END SECOND POINT
 
@@ -88,7 +88,7 @@ btmax = 40;
 % calling the method:
 
 
-[x1k, f1k, gradf1k_norm, k1, x1seq,f1seq, bt1seq] = ...
+[x1k, f1k, gradf1k_norm, k1, x1seq,f1seq, bt1seq, taoseq1] = ...
     Modified_Newton_method(X_f1(:,2), f1, gradf1, Hessf1, ...
     kmax, tolgrad, c, rho, btmax);
 
@@ -103,8 +103,14 @@ ylabel('Values of the Rosenbrock function');
 %    Modified_Newton_method(X_f2(:,2), f2, gradf2, Hessf2, ...
 %    kmax, tolgrad, c, rho, btmax);
 
-%[x3k, f3k, gradf3k_norm, k3, x3seq, f3seq, b3tseq] = ...
-%    Modified_Newton_method(X_f2(:,10), f3, gradf3, Hessf3, ...
-%    kmax, tolgrad, c, rho, btmax);
+[x3k, f3k, gradf3k_norm, k3, x3seq, f3seq, b3tseq, taoseq3] = ...
+     Modified_Newton_method(X_f2(:,10), f3, gradf3, Hessf3, ...
+     kmax, tolgrad, c, rho, btmax);
+
+figure; 
+semilogy(1:k3, f3seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
+grid on;
+xlabel('Iterations (k)');
+ylabel('Values for the function of the Troesch problem'); 
 
 

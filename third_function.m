@@ -32,12 +32,37 @@ function [f3, gradf3, Hessf3] = third_function(n,rho)
 
     % correct the hessian !
 
-    A = cell(n,1);
-    for k = 1:1:n
-        A{k} = @(x) rho^3 * h^2 * sinh(rho*x(k));
+    A2 = cell(n,1);   % diagonal
+    A2{1} = @(x) (rho^3 * h^2 * sinh(rho*x(1)))*fk{1}(x) + (2 + rho^2 * h^2 * cosh(rho * x(1)))^2 + 1;
+    for k = 2:1:n-1
+        A2{k} = @(x) (rho^3 * h^2 * sinh(rho*x(k)))*fk{k}(x) + (2 + rho^2 * h^2 * cosh(rho * x(k)))^2 + 2;
     end
+    A2{n} = @(x) (rho^3 * h^2 * sinh(rho*x(n)))*fk{n}(x) + (2 + rho^2 * h^2 * cosh(rho * x(n)))^2 + 1;
 
-    Hessf3 = @(x) spdiags (cell2mat(cellfun(@(A) A(x), A, 'UniformOutput', false)),0, n,n);
+    % the mixed derivatives are 0
+
+    B2 = cell(n,1);
+    C2 = cell(n,1);
+
+    B2{1} =@(x) 0;
+    C2{1} =@(x) -1*(2+ rho^2 * h^2 * cosh(rho * x(2)));
+    B2{2} =@(x) -1*(2+ rho^2 * h^2 * cosh(rho * x(2)));
+    for k = 3:1:n-2
+        B2{k} =@(x) -2*(2+ rho^2 * h^2 * cosh(rho * x(k)));
+        C2{k-1} =@(x) -2*(2+ rho^2 * h^2 * cosh(rho * x(k)));
+    end
+    B2{n-1} =@(x) -1*(2+ rho^2 * h^2 * cosh(rho * x(n-1)));
+    C2{n-2} =@(x) -1*(2+ rho^2 * h^2 * cosh(rho * x(n-1)));
+
+    B2{n} =@(x) -1*(2+ rho^2 * h^2 * cosh(rho * x(n)));
+    C2{n-1} =@(x) -1*(2+ rho^2 * h^2 * cosh(rho * x(n)));
+
+    C2{n} =@(x) 0;
+
+
+    Hessf3 = @(x) spdiags (cell2mat(cellfun(@(C2) C2(x), C2, 'UniformOutput', false)),-1, n,n)+ ...
+                  spdiags (cell2mat(cellfun(@(A2) A2(x), A2, 'UniformOutput', false)),0, n,n)+...
+                  spdiags (cell2mat(cellfun(@(B2) B2(x), B2, 'UniformOutput', false)),+1, n,n);
 
 end
 
