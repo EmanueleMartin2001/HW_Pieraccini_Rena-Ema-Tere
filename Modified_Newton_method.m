@@ -1,4 +1,4 @@
-function [xk, fk, gradfk_norm, k, xseq, btseq] = ...
+function [xk, fk, gradfk_norm, k, xseq, fseq, btseq] = ...
     Modified_Newton_method(x0, f, gradf, Hessf, ...
     kmax, tolgrad, c1, rho, btmax)
 %
@@ -41,6 +41,7 @@ farmijo = @(fk, alpha, c1_gradfk_pk) ...
 
 % Initializations
 xseq = zeros(length(x0), kmax);
+fseq = zeros(1,kmax);
 btseq = zeros(1, kmax);
 
 xk = x0;
@@ -107,6 +108,7 @@ while k < kmax && gradfk_norm >= tolgrad
     
     % Store current xk in xseq
     xseq(:, k) = xk;
+    fseq(k) = fk;
     % Store bt iterations in btseq
     btseq(k) = bt;
 end
@@ -114,6 +116,7 @@ end
 % "Cut" xseq and btseq to the correct size
 xseq = xseq(:, 1:k);
 btseq = btseq(1:k);
+fseq = fseq(1:k);
 % "Add" x0 at the beginning of xseq (otherwise the first el. is x1)
 xseq = [x0, xseq];
 
