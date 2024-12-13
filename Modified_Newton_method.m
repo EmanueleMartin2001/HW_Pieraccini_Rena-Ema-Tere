@@ -1,6 +1,6 @@
 function [xk, fk, gradfk_norm, k, xseq, fseq, btseq, taoseq] = ...
     Modified_Newton_method(x0, f, gradf, Hessf, ...
-    kmax, tolgrad, c1, rho, btmax)
+    kmax, tolgrad, c1, rho, btmax, type_tao)
 %
 % [xk, fk, gradfk_norm, k, xseq, btseq] = ...
     % newton_bcktrck(x0, f, gradf, Hessf, ...
@@ -50,11 +50,19 @@ fk = f(xk);
 gradfk = gradf(xk);
 k = 0;
 gradfk_norm = norm(gradfk);
+delta = sqrt(eps);
 
 while k < kmax && gradfk_norm >= tolgrad
 
     Hk = Hessf(xk);   % compute the Hessian
-    tao = CholeskyAddIdentity(Hk);
+    switch type_tao 
+        case 'Cholesky'
+            tao = CholeskyAddIdentity(Hk);
+        case 'Gershgorin'
+            tao = Gershgorin_approx(Hk, delta);
+        case 'Eigen'
+            tao = Eigen_tao(Hk,delta);
+    end
     Bk = Hk + tao*diag(ones(length(x0),1)); % computation of Bk as a positive definite matrix
 
 

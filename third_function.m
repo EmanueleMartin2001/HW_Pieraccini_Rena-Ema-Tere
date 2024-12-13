@@ -30,8 +30,6 @@ function [f3, gradf3, Hessf3] = third_function(n,rho)
 
     % \frac{\partial F}{\partial x_i \partial x_j} = \sum_{k=1}^n \frac{\partial fk}{\partial x_i \partial x_j}*fk + \frac{\partial fk}{\partial x_i} \frac{\partial fk}{\partial x_j}
 
-    % correct the hessian !
-
     A2 = cell(n,1);   % diagonal
     A2{1} = @(x) (rho^3 * h^2 * sinh(rho*x(1)))*fk{1}(x) + (2 + rho^2 * h^2 * cosh(rho * x(1)))^2 + 1;
     for k = 2:1:n-1
