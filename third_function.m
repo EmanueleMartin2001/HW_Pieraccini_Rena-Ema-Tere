@@ -22,7 +22,7 @@ function [f3, gradf3, Hessf3] = third_function(n,rho)
     deriv_j{n-1} = @(x) dot([-1; 2+rho^2*h^2*cosh(x(n-1)*rho);-1] , [fk{n-2}(x);fk{n-1}(x);fk{n}(x)]);
     deriv_j{n} = @(x) dot([ -1; 2+rho^2*h^2*cosh(rho*x(n))],[fk{n-1}(x);fk{n}(x)]);
 
-    % I wrote the sum using the dot commando (for inner product) knowing
+    % I wrote the sum using the dot command (for inner product) knowing
     % that some derivatives are zero
 
     gradf3 = @(x) cell2mat(cellfun(@(deriv_j) deriv_j(x), deriv_j, 'UniformOutput', false));

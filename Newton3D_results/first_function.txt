@@ -1,0 +1,132 @@
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 1: START *****
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 1: FINISHED *****
+Time: 34.1977 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 1
+f(xk): 318.1785
+N. of Iterations: 1000/1000;
+************************************
+FAIL
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 2: START *****
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 2: FINISHED *****
+Time: 1.2403 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 1
+f(xk): 2.2705e-18
+N. of Iterations: 16/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 3: START *****
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 3: FINISHED *****
+Time: 34.9241 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 317.8725
+N. of Iterations: 1000/1000;
+************************************
+FAIL
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 4: START *****
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 4: FINISHED *****
+Time: 0.40178 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 9.3256e-13
+N. of Iterations: 15/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 5: START *****
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 5: FINISHED *****
+Time: 36.2039 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 318.5622
+N. of Iterations: 1000/1000;
+************************************
+FAIL
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 6: START *****
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 6: FINISHED *****
+Time: 0.40524 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 2.4006e-13
+N. of Iterations: 14/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 7: START *****
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 7: FINISHED *****
+Time: 35.3943 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 316.6954
+N. of Iterations: 1000/1000;
+************************************
+FAIL
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 8: START *****
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 8: FINISHED *****
+Time: 0.29606 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 5.5957e-12
+N. of Iterations: 11/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 9: START *****
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 9: FINISHED *****
+Time: 36.3172 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 318.3757
+N. of Iterations: 1000/1000;
+************************************
+FAIL
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 10: START *****
+**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT 10: FINISHED *****
+Time: 0.53798 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 1.3079e-10
+N. of Iterations: 20/1000;
+************************************
+SUCCESS
+************************************
+ 
+>> result_first_function =
+
+     0
+     1
+     0
+     1
+     0
+     1
+     0
+     1
+     0
+     1
