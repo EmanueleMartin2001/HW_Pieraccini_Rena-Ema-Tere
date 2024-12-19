@@ -1,4 +1,7 @@
 
+clc;
+clear;
+close all;
 
 
 
@@ -16,7 +19,7 @@ rng(seed);
 
 %%%%%%%% SECOND POINT %%%%%%%%
 
-d = 3;    % alternative: 3,4,5
+d = 1;    % alternative: 3,4,5
 
 n = 10^d;
 
@@ -24,7 +27,7 @@ n = 10^d;
 
 [f2,gradf2, Hessf2] = second_function(n); % Problem 27
 
-[f3, gradf3, Hessf3] = third_function(n,10); %Problem 64
+[f3, gradf3, Hessf3] = third_function(n,10); % Problem 64
 
 %%%%%%%% END SECOND POINT
 
@@ -83,26 +86,47 @@ c = 1e-4;
 kmax = 1000;
 tolgrad = 1e-6;
 btmax = 40;
-type_tao = 'Gershgorin';
+%type_tao = 'Gershgorin';
+%type_tao = 'Eigen';
+type_tao = 'Cholesky';
 
 
 % calling the method:
 
 
-% [x1k, f1k, gradf1k_norm, k1, x1seq,f1seq, bt1seq, taoseq1] = ...
-%     Modified_Newton_method(X_f1(:,9), f1, gradf1, Hessf1, ...
-%     kmax, tolgrad, c, rho, btmax);
+[x1k, f1k, gradf1k_norm, k1, x1seq,f1seq, bt1seq, taoseq1] = ...
+    Modified_Newton_method(X_f1(:,8), f1, gradf1, Hessf1, ...
+    kmax, tolgrad, c, rho, btmax, type_tao);
 
-% figure; 
-% semilogy(1:k1, f1seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
-% grid on;
-% xlabel('Iterations (k)');
-% ylabel('Values of the Rosenbrock function'); 
+figure; 
+semilogy(1:k1, f1seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
+grid on;
+xlabel('Iterations (k)');
+ylabel('Values of the Rosenbrock function'); 
+
+figure;
+bar(1:k1, taoseq1, 'FaceColor', 'blue', 'EdgeColor', 'black')
+grid on;
+xlabel('Iterations (k)');
+ylabel('Tao values for the Rosenbrock function'); 
 
 
-%[x2k, f2k, gradf2k_norm, k2, x2seq, f2seq, b2tseq] = ...
-%    Modified_Newton_method(X_f2(:,2), f2, gradf2, Hessf2, ...
-%    kmax, tolgrad, c, rho, btmax);
+[x2k, f2k, gradf2k_norm, k2, x2seq, f2seq, b2tseq, taoseq2] = ...
+   Modified_Newton_method(X_f2(:,2), f2, gradf2, Hessf2, ...
+   kmax, tolgrad, c, rho, btmax, type_tao);
+
+figure; 
+semilogy(1:k2, f2seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
+grid on;
+xlabel('Iterations (k)');
+ylabel('Values of the Penalty function 1'); 
+
+figure;
+bar(1:k2, taoseq2, 'FaceColor', 'blue', 'EdgeColor', 'black')
+grid on;
+xlabel('Iterations (k)');
+ylabel('Tao values for the Penalty function 1'); 
+
 
 [x3k, f3k, gradf3k_norm, k3, x3seq, f3seq, b3tseq, taoseq3] = ...
     Modified_Newton_method(X_f2(:,2), f3, gradf3, Hessf3, ...
@@ -113,5 +137,11 @@ semilogy(1:k3, f3seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
 grid on;
 xlabel('Iterations (k)');
 ylabel('Values for the function of the Troesch problem'); 
+
+figure;
+bar(1:k3, taoseq3, 'FaceColor', 'blue', 'EdgeColor', 'black')
+grid on;
+xlabel('Iterations (k)');
+ylabel('Tao values for the function of the Troesch problem'); 
 
 

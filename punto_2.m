@@ -10,6 +10,8 @@ rho = 0.5;
 
 c1 = 1e-4;
 
+type_tao = 'Cholesky';
+
 x_0_1 = [-1.2 ; 1];
 % x_0_1 = [1.2 ; 1.2];
 
@@ -25,7 +27,7 @@ tolgrad = 1e-5;
 disp('**** MODIFIED NEWTON METHOD : START *****')
 
 tic;
-[xk_mnm, fk_mnm, gradfk_norm, k_mnm, xseq_mnm ,btseq] = Modified_Newton_method(x_0_1, f_Rosenbrock, gradf_Rosenbrock, Hessianf_Rosenbrock, kmax, tolgrad ,c1, rho, btmax);
+[xk_mnm, fk_mnm, gradfk_norm, k_mnm, xseq_mnm ,btseq] = Modified_Newton_method(x_0_1, f_Rosenbrock, gradf_Rosenbrock, Hessianf_Rosenbrock, kmax, tolgrad ,c1, rho, btmax, type_tao);
 t = toc;
 
 disp('**** MODIFIED NEWTON METHOD: FINISHED *****')

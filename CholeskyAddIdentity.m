@@ -1,4 +1,4 @@
-function [tao] = CholeskyAddIdentity(Hessian)
+function [tao,R] = CholeskyAddIdentity(Hessian)
 
     Beta = 10^-3;
     kmax = 1000;
