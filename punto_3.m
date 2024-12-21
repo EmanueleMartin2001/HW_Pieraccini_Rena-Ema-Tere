@@ -97,78 +97,32 @@ result_first_function = 1000*ones(10,1);
 result_second_function = 1000*ones(10,1);
 result_third_function = 1000*ones(10,1);
 
-for i = 1:1:10
-
-    disp(['**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT ', num2str(i), ': START *****']);
-    tic;
-    [x1k, f1k, gradf1k_norm, k1, x1seq,f1seq, bt1seq, taoseq1] = ...
-        Modified_Newton_method(X_f1(:,i), f1, gradf1, Hessf1, ...
-        kmax, tolgrad, c, rho, btmax, type_tao);
-    t = toc;
-
-    disp(['**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT ', num2str(i), ': FINISHED *****']);
-
-    disp(['Time: ', num2str(t), ' seconds']);
-
-    disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
-    disp('************************************')
-    disp(['N. tao used: ', num2str(nnz(taoseq1))])
-    disp(['f(xk): ', num2str(f1k)])
-    disp(['N. of Iterations: ', num2str(k1),'/',num2str(kmax), ';'])
-    disp('************************************')
-
-    if k1 == kmax
-        result_first_function(i) = 0;
-        disp('FAIL')
-        disp('************************************')
-    else
-        result_first_function(i) = 1;
-        disp('SUCCESS')
-        disp('************************************')
-    end
-    disp(' ')
-
-end
-
-figure; 
-semilogy(1:k1, f1seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
-grid on;
-xlabel('Iterations (k)');
-ylabel('Values of the Rosenbrock function'); 
-
-figure;
-bar(1:k1, taoseq1, 'FaceColor', 'blue', 'EdgeColor', 'black')
-grid on;
-xlabel('Iterations (k)');
-ylabel('Tao values for the Rosenbrock function'); 
-
-
 % for i = 1:1:10
 % 
-%     disp(['**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT ', num2str(i), ': START *****']);
+%     disp(['**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT ', num2str(i), ': START *****']);
 %     tic;
-%     [x2k, f2k, gradf2k_norm, k2, x2seq, f2seq, b2tseq, taoseq2] = ...
-%         Modified_Newton_method(X_f2(:,i), f2, gradf2, Hessf2, ...
+%     [x1k, f1k, gradf1k_norm, k1, x1seq,f1seq, bt1seq, taoseq1] = ...
+%         Modified_Newton_method(X_f1(:,i), f1, gradf1, Hessf1, ...
 %         kmax, tolgrad, c, rho, btmax, type_tao);
 %     t = toc;
 % 
-%     disp(['**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT ', num2str(i), ': FINISHED *****']);
+%     disp(['**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT ', num2str(i), ': FINISHED *****']);
 % 
 %     disp(['Time: ', num2str(t), ' seconds']);
 % 
 %     disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
 %     disp('************************************')
-%     disp(['N. tao used: ', num2str(nnz(taoseq2))])
-%     disp(['f(xk): ', num2str(f2k)])
-%     disp(['N. of Iterations: ', num2str(k2),'/',num2str(kmax), ';'])
+%     disp(['N. tao used: ', num2str(nnz(taoseq1))])
+%     disp(['f(xk): ', num2str(f1k)])
+%     disp(['N. of Iterations: ', num2str(k1),'/',num2str(kmax), ';'])
 %     disp('************************************')
 % 
-%     if k2 == kmax
-%         result_second_function(i) = 0;
+%     if k1 == kmax
+%         result_first_function(i) = 0;
 %         disp('FAIL')
 %         disp('************************************')
 %     else
-%         result_second_function(i) = 1;
+%         result_first_function(i) = 1;
 %         disp('SUCCESS')
 %         disp('************************************')
 %     end
@@ -177,16 +131,62 @@ ylabel('Tao values for the Rosenbrock function');
 % end
 % 
 % figure; 
-% semilogy(1:k2, f2seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
+% semilogy(1:k1, f1seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
 % grid on;
 % xlabel('Iterations (k)');
-% ylabel('Values of the Penalty function 1'); 
+% ylabel('Values of the Rosenbrock function'); 
 % 
 % figure;
-% bar(1:k2, taoseq2, 'FaceColor', 'blue', 'EdgeColor', 'black')
+% bar(1:k1, taoseq1, 'FaceColor', 'blue', 'EdgeColor', 'black')
 % grid on;
 % xlabel('Iterations (k)');
-% ylabel('Tao values for the Penalty function 1'); 
+% ylabel('Tao values for the Rosenbrock function'); 
+
+
+for i = 1:1:10
+
+    disp(['**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT ', num2str(i), ': START *****']);
+    tic;
+    [x2k, f2k, gradf2k_norm, k2, x2seq, f2seq, b2tseq, taoseq2] = ...
+        Modified_Newton_method(X_f2(:,i), f2, gradf2, Hessf2, ...
+        kmax, tolgrad, c, rho, btmax, type_tao);
+    t = toc;
+
+    disp(['**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT ', num2str(i), ': FINISHED *****']);
+
+    disp(['Time: ', num2str(t), ' seconds']);
+
+    disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
+    disp('************************************')
+    disp(['N. tao used: ', num2str(nnz(taoseq2))])
+    disp(['f(xk): ', num2str(f2k)])
+    disp(['N. of Iterations: ', num2str(k2),'/',num2str(kmax), ';'])
+    disp('************************************')
+
+    if k2 == kmax
+        result_second_function(i) = 0;
+        disp('FAIL')
+        disp('************************************')
+    else
+        result_second_function(i) = 1;
+        disp('SUCCESS')
+        disp('************************************')
+    end
+    disp(' ')
+
+end
+
+figure; 
+semilogy(1:k2, f2seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
+grid on;
+xlabel('Iterations (k)');
+ylabel('Values of the Penalty function 1'); 
+
+figure;
+bar(1:k2, taoseq2, 'FaceColor', 'blue', 'EdgeColor', 'black')
+grid on;
+xlabel('Iterations (k)');
+ylabel('Tao values for the Penalty function 1'); 
 
 % for i = 1:1:10
 % 

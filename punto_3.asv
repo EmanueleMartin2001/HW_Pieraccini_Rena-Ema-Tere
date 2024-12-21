@@ -19,7 +19,7 @@ rng(seed);
 
 %%%%%%%% SECOND POINT %%%%%%%%
 
-d = 3;    % alternative: 3,4,5
+d = 4;    % alternative: 3,4,5
 
 n = 10^d;
 
@@ -143,38 +143,38 @@ result_third_function = 1000*ones(10,1);
 % ylabel('Tao values for the Rosenbrock function'); 
 
 
-% for i = 1:1:10
-% 
-%     disp(['**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT ', num2str(i), ': START *****']);
-%     tic;
-%     [x2k, f2k, gradf2k_norm, k2, x2seq, f2seq, b2tseq, taoseq2] = ...
-%         Modified_Newton_method(X_f2(:,i), f2, gradf2, Hessf2, ...
-%         kmax, tolgrad, c, rho, btmax, type_tao);
-%     t = toc;
-% 
-%     disp(['**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT ', num2str(i), ': FINISHED *****']);
-% 
-%     disp(['Time: ', num2str(t), ' seconds']);
-% 
-%     disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
-%     disp('************************************')
-%     disp(['N. tao used: ', num2str(nnz(taoseq2))])
-%     disp(['f(xk): ', num2str(f2k)])
-%     disp(['N. of Iterations: ', num2str(k2),'/',num2str(kmax), ';'])
-%     disp('************************************')
-% 
-%     if k2 == kmax
-%         result_second_function(i) = 0;
-%         disp('FAIL')
-%         disp('************************************')
-%     else
-%         result_second_function(i) = 1;
-%         disp('SUCCESS')
-%         disp('************************************')
-%     end
-%     disp(' ')
-% 
-% end
+for i = 1:1:10
+
+    disp(['**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT ', num2str(i), ': START *****']);
+    tic;
+    [x2k, f2k, gradf2k_norm, k2, x2seq, f2seq, b2tseq, taoseq2] = ...
+        Modified_Newton_method(X_f2(:,i), f2, gradf2, Hessf2, ...
+        kmax, tolgrad, c, rho, btmax, type_tao);
+    t = toc;
+
+    disp(['**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT ', num2str(i), ': FINISHED *****']);
+
+    disp(['Time: ', num2str(t), ' seconds']);
+
+    disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
+    disp('************************************')
+    disp(['N. tao used: ', num2str(nnz(taoseq2))])
+    disp(['f(xk): ', num2str(f2k)])
+    disp(['N. of Iterations: ', num2str(k2),'/',num2str(kmax), ';'])
+    disp('************************************')
+
+    if k2 == kmax
+        result_second_function(i) = 0;
+        disp('FAIL')
+        disp('************************************')
+    else
+        result_second_function(i) = 1;
+        disp('SUCCESS')
+        disp('************************************')
+    end
+    disp(' ')
+
+end
 % 
 % figure; 
 % semilogy(1:k2, f2seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
