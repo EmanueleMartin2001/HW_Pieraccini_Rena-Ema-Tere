@@ -1,4 +1,4 @@
-function [x_opt, fx_opt, k, x_seq, singular] = Nelder_Mead(X, f, varargin) 
+function [x_opt, fx_opt, k, x_seq, f_seq, singular] = Nelder_Mead(X, f, varargin) 
 
 %% INPUTS  
 % X = matrix which rows are the starting points of the simplex
@@ -15,6 +15,8 @@ function [x_opt, fx_opt, k, x_seq, singular] = Nelder_Mead(X, f, varargin)
 %% OUTPUTS
 % x_opt = best point found
 % fx_opt = f(x_opt) (i.e. function evaluated in the best point)
+% x_seq = sequence of best points found during the algorithm
+% f_seq = values of x_seq (i.e. f(x_seq))
 % k = number of iterations performed
 % singular = boolean value which tells if the starting simplex is singular (1=true)
 
@@ -44,6 +46,7 @@ x_opt = [];
 fx_opt = [];
 k = 0;
 x_seq = [];
+f_seq = [];
 singular = false;
 
 %% 0 singularity check
@@ -90,6 +93,7 @@ while k < kmax &&... % check ix x_{1} and x_{n+1} are close or f(x_{1}) is close
         values_indices(n+1,1) = f_xr;    %f_x{n+1} --> f_{xr}  
         values_indices = sortrows(values_indices,1); %points reordered
         x_seq(k,:) = X(values_indices(1,2),:); % best point found so far
+        f_seq(k) = f(x_seq(k,:));
         % we know that x_seq(k,:) = x_seq(k-1,:) due to the if above, but
         % we still want to save this point in order to have an
         % understanding about the convergence speed of the method
@@ -102,12 +106,16 @@ while k < kmax &&... % check ix x_{1} and x_{n+1} are close or f(x_{1}) is close
             values_indices(n+1,1) = f_xe;    %f_x{n+1} --> f_{xe}  
             values_indices = sortrows(values_indices,1); %points reordered
             x_seq(k,:) = X(values_indices(1,2),:); % best point found so far
+            f_seq(k) = f(x_seq(k,:));
+
             continue
         else
             X(values_indices(n+1,2),:) = xr; %x_{n+1} --> xr
             values_indices(n+1,1) = f_xr;    %f_x{n+1} --> f_{xr}  
             values_indices = sortrows(values_indices,1); %points reordered
             x_seq(k,:) = X(values_indices(1,2),:); % best point found so far
+            f_seq(k) = f(x_seq(k,:));
+
             continue
         end
     else %%% CONTRACTION %%%  (f_xr >= values_indices(n,1))
@@ -122,6 +130,7 @@ while k < kmax &&... % check ix x_{1} and x_{n+1} are close or f(x_{1}) is close
             values_indices(n+1,1) = f_xc;    %f_x{n+1} --> f_{xc}  
             values_indices = sortrows(values_indices,1); %points reordered
             x_seq(k,:) = X(values_indices(1,2),:); % best point found so far
+            f_seq(k) = f(x_seq(k,:));
             continue
         else %%% SHRINKAGE %%%
             for i = 2:n+1
@@ -131,13 +140,12 @@ while k < kmax &&... % check ix x_{1} and x_{n+1} are close or f(x_{1}) is close
             end
             values_indices = sortrows(values_indices,1);
             x_seq(k,:) = X(values_indices(1,2),:); % best point found so far
+            f_seq(k) = f(x_seq(k,:));
         end
     end    
 end
 x_opt = X(values_indices(1,2),:); % best point
 fx_opt = f(x_opt);
-
-
 
 end
 
