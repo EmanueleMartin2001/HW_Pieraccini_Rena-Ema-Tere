@@ -19,7 +19,7 @@ rng(seed);
 
 %%%%%%%% SECOND POINT %%%%%%%%
 
-d = 3;    % alternative: 3,4,5
+d = 4;    % alternative: 3,4,5
 
 n = 10^d;
 
