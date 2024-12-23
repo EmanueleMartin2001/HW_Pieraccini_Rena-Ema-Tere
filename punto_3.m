@@ -19,7 +19,7 @@ rng(seed);
 
 %%%%%%%% SECOND POINT %%%%%%%%
 
-d = 4;    % alternative: 3,4,5
+d = 3;    % alternative: 3,4,5
 
 n = 10^d;
 
@@ -238,7 +238,7 @@ figure;
 semilogy(1:k3, f3seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
 grid on;
 xlabel('Iterations (k)');
-ylabel('Values for the function of the Troesch problem'); 
+ylabel('Values for the Banded trigonometric problem'); 
 
 figure;
 hold on;
@@ -247,7 +247,7 @@ bar(1:k3, taoseq3 .* (taoseq3 < 0), 'FaceColor', 'red', 'EdgeColor', 'black'); %
 hold off
 grid on;
 xlabel('Iterations (k)');
-ylabel('Tao values for the function of the Troesch problem'); 
+ylabel('Tao values for the Banded trigonometric problem'); 
 %legend({'Positive values', 'Negative values'});
 
 
