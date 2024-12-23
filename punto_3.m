@@ -19,7 +19,7 @@ rng(seed);
 
 %%%%%%%% SECOND POINT %%%%%%%%
 
-d = 3;    % alternative: 3,4,5
+d = 4;    % alternative: 3,4,5
 
 n = 10^d;
 
@@ -235,7 +235,7 @@ for i = 1:1:10
 end
 
 figure; 
-semilogy(1:k3, f3seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
+plot(1:k3, f3seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
 grid on;
 xlabel('Iterations (k)');
 ylabel('Values for the Banded trigonometric problem'); 

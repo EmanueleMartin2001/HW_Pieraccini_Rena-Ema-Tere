@@ -1,0 +1,137 @@
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 1: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 1: FINISHED *****
+Time: 102.8719 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 18
+f(xk): -4159.9324
+N. of Iterations: 22/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 2: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 2: FINISHED *****
+Time: 120.8996 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 21
+f(xk): -4159.9324
+N. of Iterations: 25/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 3: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 3: FINISHED *****
+Time: 124.0805 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 23
+f(xk): -4159.9324
+N. of Iterations: 25/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 4: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 4: FINISHED *****
+Time: 133.7095 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 24
+f(xk): -4159.9324
+N. of Iterations: 27/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 5: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 5: FINISHED *****
+Time: 126.3516 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 22
+f(xk): -4159.9324
+N. of Iterations: 25/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 6: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 6: FINISHED *****
+Time: 108.8306 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 19
+f(xk): -4159.9324
+N. of Iterations: 22/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 7: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 7: FINISHED *****
+Time: 109.6772 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 19
+f(xk): -4159.9324
+N. of Iterations: 22/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 8: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 8: FINISHED *****
+Time: 97.242 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 15
+f(xk): -4159.9324
+N. of Iterations: 20/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 9: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 9: FINISHED *****
+Time: 93.3342 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 17
+f(xk): -4159.9324
+N. of Iterations: 19/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 10: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 10: FINISHED *****
+Time: 100.4962 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 17
+f(xk): -4159.9324
+N. of Iterations: 20/1000;
+************************************
+SUCCESS
+************************************
+ 
+Warning: Negative data ignored 
+>> result_third_function
+
+result_third_function =
+
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+
+>> 
