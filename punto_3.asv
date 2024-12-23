@@ -19,7 +19,7 @@ rng(seed);
 
 %%%%%%%% SECOND POINT %%%%%%%%
 
-d = 4;    % alternative: 3,4,5
+d = 2;    % alternative: 3,4,5
 
 n = 10^d;
 
@@ -55,8 +55,6 @@ for l = 1:1:n
     x_f2(l) = l;
 end
 
-% construction of the test point for f3
-
 x_f3 = ones(n,1);
 
 
@@ -76,15 +74,6 @@ X_f2 = X_f2(:,1:1:10);
 error = rand(n,10);
 X_f2 = X_f2 + error;
 
-% construction of the 10 points for f3 
-
-X_f3 = (x_f3*(ones(n,1))')';
-X_f3 = X_f3(:,1:1:10);
-
-error = rand(n,10);
-X_f3 = X_f3 + error;
-
-
 %%%%%%%% END THIRD POINT %%%%%%%%
 
 
@@ -96,12 +85,12 @@ X_f3 = X_f3 + error;
 rho = 0.5;
 c = 1e-4;
 
-kmax = 1000;
+kmax = 10000;
 tolgrad = 1e-4;
 btmax = 40;
-%type_tao = 'Gershgorin';
+type_tao = 'Gershgorin';
 %type_tao = 'Eigen';
-type_tao = 'Cholesky';
+%type_tao = 'Cholesky';
 
 
 % calling the method:
@@ -206,7 +195,7 @@ for i = 1:1:10
     disp(['**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT ', num2str(i), ': STARTED *****']);
     tic;
     [x3k, f3k, gradf3k_norm, k3, x3seq, f3seq, b3tseq, taoseq3] = ...
-        Modified_Newton_method(X_f3(:,i), f3, gradf3, Hessf3, ...
+        Modified_Newton_method(X_f2(:,i), f3, gradf3, Hessf3, ...
         kmax, tolgrad, c, rho, btmax, type_tao);
     t = toc;
 
@@ -241,13 +230,9 @@ xlabel('Iterations (k)');
 ylabel('Values for the function of the Troesch problem'); 
 
 figure;
-hold on;
-bar(1:k3, taoseq3 .* (taoseq3 >= 0), 'FaceColor', 'blue', 'EdgeColor', 'black'); % positive value
-bar(1:k3, taoseq3 .* (taoseq3 < 0), 'FaceColor', 'red', 'EdgeColor', 'black'); % negative
-hold off
+bar(1:k3, taoseq3, 'FaceColor', 'blue', 'EdgeColor', 'black')
 grid on;
 xlabel('Iterations (k)');
 ylabel('Tao values for the function of the Troesch problem'); 
-%legend({'Positive values', 'Negative values'});
 
 
