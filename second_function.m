@@ -11,7 +11,7 @@ f2 = @(x) 0.5*sum(cell2mat(cellfun(@(fk) fk(x), fk, 'UniformOutput', false)).^2)
 
 gradf2 = @(x) 1/10000 * (x-1) + 2*x*(sum(x.^2)-0.25);
 
-Hessf2 = @(x) 1/10000*eye(n) + 2*eye(n)*(sum(x.^2)-0.25) + 4*x*x';
+Hessf2 = @(x) sparse(1/10000*diag(ones(n,1)) + 2*diag(ones(n,1))*(sum(x.^2)-0.25) + 4*x*x');
 
 end
 
