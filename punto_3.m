@@ -25,7 +25,7 @@ n = 10^d;
 
 % [f1,gradf1,Hessf1] = first_function(n); % Problem 1
 
- [f2,gradf2, Hessf2] = second_function_2(n); % Problem 27
+ [f2,gradf2, Hessf2] = second_function_2(n); % Problem 31
 
 %[f3, gradf3, Hessf3] = third_function_1(n); % Problem 16
 

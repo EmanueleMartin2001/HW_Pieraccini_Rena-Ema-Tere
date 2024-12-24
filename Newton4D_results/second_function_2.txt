@@ -9,3 +9,15 @@ N. of Iterations: 63/1000;
 ************************************
 SUCCESS
 ************************************
+
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 2: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 2: FINISHED *****
+Time: 55429.3748 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 5
+f(xk): 239.9131
+N. of Iterations: 146/1000;
+************************************
+FAIL
+************************************
