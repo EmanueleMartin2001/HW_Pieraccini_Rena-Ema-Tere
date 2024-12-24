@@ -1,0 +1,11 @@
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 1: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 1: FINISHED *****
+Time: 24518.4394 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 3.6737e-10
+N. of Iterations: 63/1000;
+************************************
+SUCCESS
+************************************
