@@ -153,7 +153,7 @@ result_third_function = 1000*ones(10,1);
 % ylabel('Tao values for the Rosenbrock function'); 
 
 
-for i = 1:1:10
+for i = 3:1:10
 
     disp(['**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT ', num2str(i), ': STARTED *****']);
     tic;
