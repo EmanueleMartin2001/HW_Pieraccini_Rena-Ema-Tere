@@ -21,3 +21,39 @@ N. of Iterations: 146/1000;
 ************************************
 FAIL
 ************************************
+
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 3: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 3: FINISHED *****
+Time: 20538.542 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 3
+f(xk): 3.8681e-10
+N. of Iterations: 52/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 4: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 4: FINISHED *****
+Time: 24010.7181 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 9
+f(xk): 328.53
+N. of Iterations: 60/1000;
+************************************
+FAIL
+************************************
+
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 5: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 5: FINISHED *****
+Time: 21419.1637 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 9
+f(xk): 118.8408
+N. of Iterations: 53/1000;
+************************************
+FAIL
+************************************
