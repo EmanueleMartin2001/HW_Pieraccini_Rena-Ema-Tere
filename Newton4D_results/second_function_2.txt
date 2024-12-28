@@ -57,3 +57,7 @@ N. of Iterations: 53/1000;
 ************************************
 FAIL
 ************************************
+
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 6: STARTED *****
+it is too long to run
+
