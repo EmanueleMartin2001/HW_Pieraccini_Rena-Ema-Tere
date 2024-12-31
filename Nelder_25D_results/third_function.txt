@@ -1,0 +1,133 @@
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 1: STARTED *****
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 1: FINISHED *****
+Time: 0.69218 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx3_opt: -16.07
+N. of Iterations: 4500/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 2: STARTED *****
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 2: FINISHED *****
+Time: 0.66457 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx3_opt: -16.1337
+N. of Iterations: 4707/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 3: STARTED *****
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 3: FINISHED *****
+Time: 0.41606 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx3_opt: -16.0374
+N. of Iterations: 3005/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 4: STARTED *****
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 4: FINISHED *****
+Time: 0.31755 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx3_opt: -16.1021
+N. of Iterations: 2379/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 5: STARTED *****
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 5: FINISHED *****
+Time: 0.41619 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx3_opt: -16.1263
+N. of Iterations: 3073/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 6: STARTED *****
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 6: FINISHED *****
+Time: 0.63493 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx3_opt: -16.1343
+N. of Iterations: 4193/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 7: STARTED *****
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 7: FINISHED *****
+Time: 0.32615 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx3_opt: -16.1218
+N. of Iterations: 2411/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 8: STARTED *****
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 8: FINISHED *****
+Time: 0.3562 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx3_opt: -16.1322
+N. of Iterations: 2651/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 9: STARTED *****
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 9: FINISHED *****
+Time: 0.5067 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx3_opt: -16.125
+N. of Iterations: 3543/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 10: STARTED *****
+**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX 10: FINISHED *****
+Time: 0.33627 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx3_opt: -16.0882
+N. of Iterations: 2490/100000;
+************************************
+FAIL
+************************************
+ 
+
+result_third_function =
+
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0

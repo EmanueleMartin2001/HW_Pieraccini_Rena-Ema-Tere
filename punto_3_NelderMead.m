@@ -12,13 +12,13 @@ rng(seed);
 
 %%%%%%%% SECOND POINT %%%%%%%%
 
-n = 25; %alternatives 10,25,50
+n = 50; %alternatives 10,25,50
 
-f1 = first_function(n); % Problem 1
+%f1 = first_function(n); % Problem 1
 
-f2 = second_function(n); % Problem 27
+%f2 = second_function(n); % Problem 31
 
-f3 = third_function(n,10); % Problem 64
+f3 = third_function(n); % Problem 16
 
 %%%%%%%% END SECOND POINT
 
@@ -71,6 +71,9 @@ for i = 2:n+1
     X2(i,i-1) = X2(i,i-1) + alpha_2; % perturbation of 1 coordinate by alpha_2
 end
 
+x_f3 = ones(n,1);
+
+
 %%%%%%%% END THIRD POINT %%%%%%%%
 
 
@@ -91,43 +94,148 @@ gamma = 0.5;
 
 sigma = 0.5;
 
-% the contruction of the 10 starting points is embedeed in the following
+%%%  FIRST FUNCTION  %%%
+% the construction of the 10 starting points is embedeed in the following
 % for cycle
+% for i = 1:1:10
+% 
+%     x_f1 = x_f1 + 2*rand(n,1)-1; % x_f1 perturbed in the hypercube
+% 
+%     alpha_1 = 1; %explore term (decides how big should the starting symplex be)
+%     X1 = zeros(n+1,n);
+%     X1(1,:) = x_f1;
+%     for j = 2:n+1
+%         X1(j,:) = x_f1;
+%         X1(j,j-1) = X1(j,j-1) + alpha_1; % perturbation of 1 coordinate by alpha_1
+%     end
+% 
+%     disp(['**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX ', num2str(i), ': STARTED *****']);
+%     tic;
+%     [x1_opt, fx1_opt, k1, x1seq, f1_seq, singular1] = Nelder_Mead(X1, f1, kmax, tol, rho, chi, gamma, sigma);
+%     t = toc;
+% 
+%     disp(['**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX ', num2str(i), ': FINISHED *****']);
+% 
+%     disp(['Time: ', num2str(t), ' seconds']);
+% 
+%     disp('**** NELDER MEAD METHOD : RESULTS *****')
+%     disp('************************************')
+%     disp(['rho: ',num2str(rho), '  chi: ', num2str(chi), '  gamma: ',num2str(gamma),'  sigma: ', num2str(sigma)])
+%     disp(['fx1_opt: ', num2str(fx1_opt)])
+%     disp(['N. of Iterations: ', num2str(k1),'/',num2str(kmax), ';'])
+%     disp('************************************')
+% 
+%     if k1 == kmax || singular1 == 1 || abs(fx1_opt) > tol
+%         result_first_function(i) = 0;
+%         disp('FAIL')
+%         disp('************************************')
+%     else
+%         result_first_function(i) = 1;
+%         disp('SUCCESS')
+%         disp('************************************')
+%     end
+%     disp(' ')
+% 
+% end
+% 
+% figure; 
+% semilogy(1:k1, f1_seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
+% grid on;
+% xlabel('Iterations (k)');
+% ylabel('Values of the Rosenbrock function'); 
+% result_first_function = result_first_function';
+% result_first_function
 
+
+% %%%  SECOND FUNCTION  %%%
+% % the construction of the 10 starting points is embedeed in the following
+% % for cycle
+% for i = 1:1:10
+%     x_f2 = x_f2 + 2*rand(n,1)-1; % x_f2 perturbed in the hypercube
+%     alpha_2 = 1; %explore term (decides how big should the starting symplex be)
+%     X2 = zeros(n+1,n);
+%     X2(1,:) = x_f2;
+%     for j = 2:n+1
+%         X2(j,:) = x_f2;
+%         X2(j,j-1) = X2(j,j-1) + alpha_2; % perturbation of 1 coordinate by alpha_2
+%     end
+% 
+%     disp(['**** NELDER MEAD METHOD FOR THE SECOND FUNCTION, STARTING SYMPLEX ', num2str(i), ': STARTED *****']);
+%     tic;
+%     [x2_opt, fx2_opt, k2, x2seq, f2_seq, singular2] = Nelder_Mead(X2, f2, kmax, tol, rho, chi, gamma, sigma);
+%     t = toc;
+% 
+%     disp(['**** NELDER MEAD METHOD FOR THE SECOND FUNCTION, STARTING SYMPLEX ', num2str(i), ': FINISHED *****']);
+% 
+%     disp(['Time: ', num2str(t), ' seconds']);
+% 
+%     disp('**** NELDER MEAD METHOD : RESULTS *****')
+%     disp('************************************')
+%     disp(['rho: ',num2str(rho), '  chi: ', num2str(chi), '  gamma: ',num2str(gamma),'  sigma: ', num2str(sigma)])
+%     disp(['fx2_opt: ', num2str(fx2_opt)])
+%     disp(['N. of Iterations: ', num2str(k2),'/',num2str(kmax), ';'])
+%     disp('************************************')
+% 
+%     if k2 == kmax || singular2 == 1 || abs(fx2_opt) > tol
+%         result_second_function(i) = 0;
+%         disp('FAIL')
+%         disp('************************************')
+%     else
+%         result_second_function(i) = 1;
+%         disp('SUCCESS')
+%         disp('************************************')
+%     end
+%     disp(' ')
+% 
+% end
+% 
+% figure; 
+% semilogy(1:k2, f2_seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
+% grid on;
+% xlabel('Iterations (k)');
+% ylabel('Values of the Broyden tridiagonal function'); 
+% result_second_function'
+
+
+%%%  THIRD FUNCTION  %%%
+% the construction of the 10 starting points is embedeed in the following
+% for cycle
 for i = 1:1:10
 
-    x_f1 = x_f1 + 2*rand(n,1)-1; % x_f1 perturbed in the hypercube
+    x_f3 = x_f3 + 2*rand(n,1)-1; % x_f3 perturbed in the hypercube
 
-    alpha_1 = 1; %explore term (decides how big should the starting symplex be)
-    X1 = zeros(n+1,n);
-    X1(1,:) = x_f1;
+    alpha_3 = 1; %explore term (decides how big should the starting symplex be)
+    X3 = zeros(n+1,n);
+    X3(1,:) = x_f3;
     for j = 2:n+1
-        X1(j,:) = x_f1;
-        X1(j,j-1) = X1(j,j-1) + alpha_1; % perturbation of 1 coordinate by alpha_1
+        X3(j,:) = x_f3;
+        X3(j,j-1) = X3(j,j-1) + alpha_3; % perturbation of 1 coordinate by alpha_3
     end
 
-    disp(['**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX ', num2str(i), ': STARTED *****']);
+    disp(['**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX ', num2str(i), ': STARTED *****']);
     tic;
-    [x1_opt, fx1_opt, k1, x1seq, f1_seq, singular1] = Nelder_Mead(X1, f1, kmax, tol, rho, chi, gamma, sigma);
+    [x3_opt, fx3_opt, k3, x3seq, f3_seq, singular3] = Nelder_Mead(X3, f3, kmax, tol, rho, chi, gamma, sigma);
     t = toc;
 
-    disp(['**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX ', num2str(i), ': FINISHED *****']);
+    disp(['**** NELDER MEAD METHOD FOR THE THIRD FUNCTION, STARTING SYMPLEX ', num2str(i), ': FINISHED *****']);
 
     disp(['Time: ', num2str(t), ' seconds']);
 
     disp('**** NELDER MEAD METHOD : RESULTS *****')
     disp('************************************')
     disp(['rho: ',num2str(rho), '  chi: ', num2str(chi), '  gamma: ',num2str(gamma),'  sigma: ', num2str(sigma)])
-    disp(['fx1_opt: ', num2str(fx1_opt)])
-    disp(['N. of Iterations: ', num2str(k1),'/',num2str(kmax), ';'])
+    disp(['fx3_opt: ', num2str(fx3_opt)])
+    disp(['N. of Iterations: ', num2str(k3),'/',num2str(kmax), ';'])
     disp('************************************')
-
-    if k1 == kmax || singular1 == 1
-        result_first_function(i) = 0;
+    % n = 10 => f(x3_opt) = -8.0514
+    % n = 25 => f(x3_opt) = -16.1379
+    % n = 50 => f(x3_opt) = -27.8949
+    if k3 == kmax || singular3 == 1 || fx3_opt-(-27.8949) > tol
+        result_third_function(i) = 0;
         disp('FAIL')
         disp('************************************')
     else
-        result_first_function(i) = 1;
+        result_third_function(i) = 1;
         disp('SUCCESS')
         disp('************************************')
     end
@@ -136,8 +244,9 @@ for i = 1:1:10
 end
 
 figure; 
-semilogy(1:k1, f1_seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
+semilogy(1:k3, f3_seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
 grid on;
 xlabel('Iterations (k)');
-ylabel('Values of the Rosenbrock function'); 
-result_first_function
+ylabel('Values of the Banded trigonometric problem'); 
+result_third_function
+

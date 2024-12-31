@@ -1,0 +1,133 @@
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 1: STARTED *****
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 1: FINISHED *****
+Time: 1.1359 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx1_opt: 15.5405
+N. of Iterations: 16650/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 2: STARTED *****
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 2: FINISHED *****
+Time: 0.047835 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx1_opt: 17.7475
+N. of Iterations: 3234/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 3: STARTED *****
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 3: FINISHED *****
+Time: 0.71639 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx1_opt: 19.0385
+N. of Iterations: 13676/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 4: STARTED *****
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 4: FINISHED *****
+Time: 0.3385 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx1_opt: 21.9834
+N. of Iterations: 9268/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 5: STARTED *****
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 5: FINISHED *****
+Time: 0.58898 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx1_opt: 19.778
+N. of Iterations: 12215/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 6: STARTED *****
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 6: FINISHED *****
+Time: 0.40339 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx1_opt: 18.4872
+N. of Iterations: 10125/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 7: STARTED *****
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 7: FINISHED *****
+Time: 1.4865 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx1_opt: 27.634
+N. of Iterations: 19416/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 8: STARTED *****
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 8: FINISHED *****
+Time: 0.93409 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx1_opt: 21.9183
+N. of Iterations: 15336/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 9: STARTED *****
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 9: FINISHED *****
+Time: 1.3771 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx1_opt: 18.6625
+N. of Iterations: 18726/100000;
+************************************
+FAIL
+************************************
+ 
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 10: STARTED *****
+**** NELDER MEAD METHOD FOR THE FIRST FUNCTION, STARTING SYMPLEX 10: FINISHED *****
+Time: 2.2782 seconds
+**** NELDER MEAD METHOD : RESULTS *****
+************************************
+rho: 1  chi: 2  gamma: 0.5  sigma: 0.5
+fx1_opt: 17.9046
+N. of Iterations: 23990/100000;
+************************************
+FAIL
+************************************
+ 
+
+ans =
+
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
