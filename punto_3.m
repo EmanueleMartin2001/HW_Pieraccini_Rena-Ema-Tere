@@ -103,9 +103,26 @@ type_tao = 'Cholesky';
 
 % calling the method:
 
-%result_first_function = 1000*ones(10,1);
-%result_second_function = 1000*ones(10,1);
+result_first_function = 1000*ones(10,1);
+result_second_function = 1000*ones(10,1);
 result_third_function = 1000*ones(10,1);
+
+time_1 = zeros(10,1);
+time_2 = zeros(10,1);
+time_3 = zeros(10,1);
+
+iteration_1 = zeros(10,1);
+iteration_2 = zeros(10,1);
+iteration_3 = zeros(10,1);
+
+number_tao_1 = zeros(10,1);
+number_tao_2 = zeros(10,1);
+number_tao_3 = zeros(10,1);
+
+conv_rate_1 = zeros(10,1);
+conv_rate_2 = zeros(10,1);
+conv_rate_3 = zeros(10,1);
+
 
 % for i = 1:1:10
 % 
@@ -122,9 +139,12 @@ result_third_function = 1000*ones(10,1);
 % 
 %     disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
 %     disp('************************************')
-%     disp(['N. tao used: ', num2str(nnz(taoseq1))])
+%     disp(['N. tao used: ', num2str(length(taoseq1.*ones(length(taoseq1),1)))])
 %     disp(['f(xk): ', num2str(f1k)])
+%     disp(['gradfk_norm: ', num2str(gradf1k_norm]))
+
 %     disp(['N. of Iterations: ', num2str(k1),'/',num2str(kmax), ';'])
+%     disp(['Rate of convergence: ', num2str(convergence_rate(x1seq)), ';'])
 %     disp('************************************')
 % 
 %     if k1 == kmax
@@ -137,6 +157,10 @@ result_third_function = 1000*ones(10,1);
 %         disp('************************************')
 %     end
 %     disp(' ')
+%    time_1(i) = t;
+%    iteration_1(i) = k1;
+%    number_tao_1(i) = nnz(taoseq1);
+%    conv_rate_1(i) = convergence_rate(x1seq);
 % 
 % end
 % 
@@ -152,8 +176,20 @@ result_third_function = 1000*ones(10,1);
 % xlabel('Iterations (k)');
 % ylabel('Tao values for the Rosenbrock function'); 
 
+% disp(' ')
+% disp(' ')
+% disp(' ')
+% disp('******************************************')
+% 
+% disp('**** RESULTS FOR THE FIRST FUNCTION *****')
+% disp(['N. of success: ', num2str(sum(result_first_function))])
+% disp(['Mean N. of Iterations (in case of success): ', num2str(round(sum(result_first_function.*iteration_1)/sum(result_first_function))),'/',num2str(kmax), ';'])
+% disp(['Mean N. tao used (in case of success): ', num2str(round(sum(result_first_function.*number_tao_1)/sum(result_first_function)))])
+% disp(['Mean convergence rate (in case of success): ', num2str(sum(result_first_function.*conv_rate_1)/sum(result_first_function))])
+% disp('******************************************')
 
-% for i = 9:1:9
+
+% for i = 1:1:10
 % 
 %     disp(['**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT ', num2str(i), ': STARTED *****']);
 %     tic;
@@ -168,9 +204,12 @@ result_third_function = 1000*ones(10,1);
 % 
 %     disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
 %     disp('************************************')
-%     disp(['N. tao used: ', num2str(nnz(taoseq2))])
+%     disp(['N. tao used: ', num2str(length(taoseq2.*ones(length(taoseq2),1)))])
 %     disp(['f(xk): ', num2str(f2k)])
+%     disp(['gradfk_norm: ', num2str(gradf2k_norm)])
+
 %     disp(['N. of Iterations: ', num2str(k2),'/',num2str(kmax), ';'])
+%     disp(['Rate of convergence: ', num2str(convergence_rate(x2seq)), ';'])
 %     disp('************************************')
 % 
 %     if (k2 == kmax || f2k > 10^-1)
@@ -183,6 +222,10 @@ result_third_function = 1000*ones(10,1);
 %         disp('************************************')
 %     end
 %     disp(' ')
+%    time_2(i) = t;
+%    iteration_2(i) = k2;
+%    number_tao_2(i) = nnz(taoseq2);
+%    conv_rate_2(i) = convergence_rate(x2seq);
 % 
 % end
 % 
@@ -197,6 +240,18 @@ result_third_function = 1000*ones(10,1);
 % grid on;
 % xlabel('Iterations (k)');
 % ylabel('Tao values for the Broyden tridiagonal function'); 
+
+% disp(' ')
+% disp(' ')
+% disp(' ')
+% disp('******************************************')
+% 
+% disp('**** RESULTS FOR THE SECOND FUNCTION *****')
+% disp(['N. of success: ', num2str(sum(result_second_function))])
+% disp(['Mean N. of Iterations (in case of success): ', num2str(round(sum(result_second_function.*iteration_2)/sum(result_second_function))),'/',num2str(kmax), ';'])
+% disp(['Mean N. tao used (in case of success): ', num2str(round(sum(result_second_function.*number_tao_2)/sum(result_second_function)))])
+% disp(['Mean convergence rate (in case of success): ', num2str(sum(result_second_function.*conv_rate_2)/sum(result_second_function))])
+% disp('******************************************')
 
 for i = 1:1:10
 
@@ -213,9 +268,11 @@ for i = 1:1:10
 
     disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
     disp('************************************')
-    disp(['N. tao used: ', num2str(nnz(taoseq3))])
+    disp(['N. tao used: ', num2str(length(taoseq3.*ones(length(taoseq3),1)))])
     disp(['f(xk): ', num2str(f3k)])
+    disp(['gradfk_norm: ', num2str(gradf3k_norm)])
     disp(['N. of Iterations: ', num2str(k3),'/',num2str(kmax), ';'])
+    disp(['Rate of convergence: ', num2str(convergence_rate(x3seq)), ';'])
     disp('************************************')
 
     if k3 == kmax
@@ -229,6 +286,11 @@ for i = 1:1:10
     end
     disp(' ')
 
+    time_3(i) = t;
+    iteration_3(i) = k3;
+    number_tao_3(i) = nnz(taoseq3);
+    conv_rate_3(i) = convergence_rate(x3seq);
+ 
 end
 
 figure; 
@@ -246,4 +308,14 @@ grid on;
 xlabel('Iterations (k)');
 ylabel('Tao values for the Banded trigonometric problem'); 
 
+disp(' ')
+disp(' ')
+disp(' ')
+disp('******************************************')
 
+disp('**** RESULTS FOR THE THIRD FUNCTION *****')
+disp(['N. of success: ', num2str(sum(result_third_function))])
+disp(['Mean N. of Iterations (in case of success): ', num2str(round(sum(result_third_function.*iteration_3)/sum(result_third_function))),'/',num2str(kmax), ';'])
+disp(['Mean N. tao used (in case of success): ', num2str(round(sum(result_third_function.*number_tao_3)/sum(result_third_function)))])
+disp(['Mean convergence rate (in case of success): ', num2str(sum(result_third_function.*conv_rate_3)/sum(result_third_function))])
+disp('******************************************')

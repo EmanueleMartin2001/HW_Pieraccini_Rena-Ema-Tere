@@ -20,17 +20,14 @@ function [tao,R] = CholeskyAddIdentity(Hessian)
     % computing A
 
     k = 1;
-    while(k > 0)
-        try
-            R = chol(Hessian + tao *diag(ones(n,1)));
-            k = -1;
-        catch
-            tao = max([2*tao;Beta]);
-        end
+    flag = 1;       %initial pivoting 
+    while(k < kmax && flag > 0 )    
 
-        if k > kmax
-            k = -1;
-        end
+        [R,flag] = chol(Hessian + tao *speye(n));   % flag is 0 if the matrix is positive definite
+
+        k = k + 1;
+
+        tao = max([2*tao;Beta]);
     end
 
 

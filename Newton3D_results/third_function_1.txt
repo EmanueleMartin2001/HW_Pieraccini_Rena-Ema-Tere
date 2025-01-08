@@ -1,140 +1,150 @@
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 1: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 1: FINISHED *****
-Time: 0.36288 seconds
+Time: 0.55272 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 13
+N. tao used: 14
 f(xk): -427.4045
-N. of Iterations: 15/1000;
+gradfk_norm: 3.4602e-08
+N. of Iterations: 14/1000;
+Rate of convergence: 4.354;
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 2: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 2: FINISHED *****
-Time: 0.40566 seconds
+Time: 0.67405 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 13
+N. tao used: 20
 f(xk): -427.4045
-N. of Iterations: 16/1000;
+gradfk_norm: 1.8862e-07
+N. of Iterations: 20/1000;
+Rate of convergence: 3.872;
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 3: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 3: FINISHED *****
-Time: 0.40407 seconds
+Time: 0.21152 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 13
+N. tao used: 16
 f(xk): -427.4045
-N. of Iterations: 17/1000;
+gradfk_norm: 8.8881e-05
+N. of Iterations: 16/1000;
+Rate of convergence: 10.5369;
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 4: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 4: FINISHED *****
-Time: 0.57514 seconds
+Time: 0.22777 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 13
+N. tao used: 17
 f(xk): -427.4045
-N. of Iterations: 21/1000;
+gradfk_norm: 4.8544e-08
+N. of Iterations: 17/1000;
+Rate of convergence: 3.4835;
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 5: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 5: FINISHED *****
-Time: 0.37873 seconds
+Time: 0.23644 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 12
+N. tao used: 17
 f(xk): -427.4045
-N. of Iterations: 14/1000;
+gradfk_norm: 4.8439e-07
+N. of Iterations: 17/1000;
+Rate of convergence: 3.9366;
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 6: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 6: FINISHED *****
-Time: 0.42105 seconds
+Time: 0.25231 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 13
+N. tao used: 19
 f(xk): -427.4045
-N. of Iterations: 16/1000;
+gradfk_norm: 5.7788e-08
+N. of Iterations: 19/1000;
+Rate of convergence: 3.4145;
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 7: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 7: FINISHED *****
-Time: 0.41259 seconds
+Time: 0.19867 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 14
+N. tao used: 15
 f(xk): -427.4045
-N. of Iterations: 16/1000;
+gradfk_norm: 1.6441e-05
+N. of Iterations: 15/1000;
+Rate of convergence: 6.2026;
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 8: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 8: FINISHED *****
-Time: 0.5664 seconds
+Time: 0.21172 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 13
+N. tao used: 16
 f(xk): -427.4045
-N. of Iterations: 17/1000;
+gradfk_norm: 4.9682e-05
+N. of Iterations: 16/1000;
+Rate of convergence: 4.905;
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 9: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 9: FINISHED *****
-Time: 0.95306 seconds
+Time: 0.21466 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 15
+N. tao used: 16
 f(xk): -427.4045
-N. of Iterations: 18/1000;
+gradfk_norm: 3.5037e-05
+N. of Iterations: 16/1000;
+Rate of convergence: 4.9266;
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 10: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 10: FINISHED *****
-Time: 0.73359 seconds
+Time: 0.21351 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 11
+N. tao used: 14
 f(xk): -427.4045
-N. of Iterations: 15/1000;
+gradfk_norm: 3.6482e-05
+N. of Iterations: 14/1000;
+Rate of convergence: 5.5039;
 ************************************
 SUCCESS
 ************************************
  
-Warning: Negative data ignored 
-Warning: Negative data ignored 
-Warning: Negative data ignored 
-Warning: Negative data ignored 
->> result_third_function
-
-result_third_function =
-
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-
->> 
+ 
+ 
+ 
+******************************************
+**** RESULTS FOR THE THIRD FUNCTION *****
+N. of success: 10
+Mean N. of Iterations (in case of success): 16/1000;
+Mean N. tao used (in case of success): 16
+Mean convergence rate (in case of success): 5.1135
+******************************************

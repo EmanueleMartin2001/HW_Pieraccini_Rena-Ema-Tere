@@ -96,3 +96,5 @@ N. of Iterations: 57/1000;
 SUCCESS
 ************************************
  
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 10: STARTED *****
+It is too long to run
