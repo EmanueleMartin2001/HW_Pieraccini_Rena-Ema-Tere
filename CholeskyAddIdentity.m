@@ -24,10 +24,11 @@ function [tao,R] = CholeskyAddIdentity(Hessian)
     while(k < kmax && flag > 0 )    
 
         [R,flag] = chol(Hessian + tao *speye(n));   % flag is 0 if the matrix is positive definite
-
-        k = k + 1;
-
-        tao = max([2*tao;Beta]);
+        
+        if flag > 0
+            tao = max(2*tao, Beta);
+            k = k + 1;
+        end
     end
 
 

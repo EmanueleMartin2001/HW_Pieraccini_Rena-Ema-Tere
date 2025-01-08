@@ -1,136 +1,150 @@
 **** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 1: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 1: FINISHED *****
-Time: 84.6795 seconds
+Time: 47.2285 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 43
-f(xk): 40.9185
-N. of Iterations: 88/1000;
+N. tao used: 0
+f(xk): 5.1189e-10
+gradfk_norm: 9.205e-05
+N. of Iterations: 52/1000;
+Rate of convergence: 1.0247;
 ************************************
-FAIL
+SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 2: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 2: FINISHED *****
-Time: 51.3704 seconds
+Time: 47.4976 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
 N. tao used: 1
-f(xk): 4.9673e-10
-N. of Iterations: 56/1000;
+f(xk): 1.933e-10
+gradfk_norm: 7.9747e-05
+N. of Iterations: 52/1000;
+Rate of convergence: 1.0239;
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 3: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 3: FINISHED *****
-Time: 121.3457 seconds
+Time: 48.7348 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 1
-f(xk): 1.2348
-N. of Iterations: 135/1000;
-************************************
-FAIL
-************************************
- 
-**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 4: STARTED *****
-**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 4: FINISHED *****
-Time: 132.8845 seconds
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-N. tao used: 4
-f(xk): 11.913
-N. of Iterations: 139/1000;
-************************************
-FAIL
-************************************
- 
-**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 5: STARTED *****
-**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 5: FINISHED *****
-Time: 49.5745 seconds
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-N. tao used: 3
-f(xk): 4.2124e-10
-N. of Iterations: 54/1000;
+N. tao used: 0
+f(xk): 3.4512e-10
+gradfk_norm: 8.0479e-05
+N. of Iterations: 52/1000;
+Rate of convergence: 1.0242;
 ************************************
 SUCCESS
 ************************************
  
-**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 6: STARTED *****
-**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 6: FINISHED *****
-Time: 65.8734 seconds
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 4: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 4: FINISHED *****
+Time: 57.1295 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 9
+f(xk): 1.8024e-10
+gradfk_norm: 7.7793e-05
+N. of Iterations: 55/1000;
+Rate of convergence: 1.0228;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 5: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 5: FINISHED *****
+Time: 49.976 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
 N. tao used: 2
-f(xk): 6.8034
-N. of Iterations: 70/1000;
+f(xk): 33.4188
+gradfk_norm: 11.2977
+N. of Iterations: 53/1000;
+Rate of convergence: 1.3099;
 ************************************
 FAIL
 ************************************
  
-**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 7: STARTED *****
-**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 7: FINISHED *****
-Time: 168.5464 seconds
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 6: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 6: FINISHED *****
+Time: 54.2539 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 121
-f(xk): 28.6605
-N. of Iterations: 174/1000;
+N. tao used: 2
+f(xk): 3.9193e-10
+gradfk_norm: 8.1425e-05
+N. of Iterations: 59/1000;
+Rate of convergence: 1.0244;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 7: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 7: FINISHED *****
+Time: 113.1876 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 5
+f(xk): 36.277
+gradfk_norm: 10.4878
+N. of Iterations: 120/1000;
+Rate of convergence: 0.92176;
 ************************************
 FAIL
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 8: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 8: FINISHED *****
-Time: 50.16 seconds
+Time: 49.3803 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 5
-f(xk): 12.7165
-N. of Iterations: 54/1000;
+N. tao used: 1
+f(xk): 29.111
+gradfk_norm: 11.2442
+N. of Iterations: 51/1000;
+Rate of convergence: 1.6339;
 ************************************
 FAIL
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 9: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 9: FINISHED *****
-Time: 40.568 seconds
+Time: 94.3925 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 0
-f(xk): 3.1514e-10
-N. of Iterations: 45/1000;
+N. tao used: 8
+f(xk): 58.0077
+gradfk_norm: 12.6599
+N. of Iterations: 100/1000;
+Rate of convergence: 0.75204;
 ************************************
-SUCCESS
+FAIL
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 10: STARTED *****
 **** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 10: FINISHED *****
-Time: 52.6129 seconds
+Time: 97.2883 seconds
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-N. tao used: 0
-f(xk): 4.317e-10
-N. of Iterations: 58/1000;
+N. tao used: 5
+f(xk): 25.4482
+gradfk_norm: 8.5936
+N. of Iterations: 101/1000;
+Rate of convergence: 1.2685;
 ************************************
-SUCCESS
+FAIL
 ************************************
  
->> result_second_function
-
-result_second_function =
-
-     0
-     1
-     0
-     0
-     1
-     0
-     0
-     0
-     1
-     1
-
->> 
+ 
+ 
+ 
+******************************************
+**** RESULTS FOR THE SECOND FUNCTION *****
+N. of success: 5
+Mean N. of Iterations (in case of success): 54/1000;
+Mean N. tao used (in case of success): 2
+Mean convergence rate (in case of success): 1.024
+******************************************
