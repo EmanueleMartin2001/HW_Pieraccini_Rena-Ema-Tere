@@ -19,15 +19,17 @@ rng(seed);
 
 %%%%%%%% SECOND POINT %%%%%%%%
 
-d = 5;    % alternative: 3,4,5
+d = 3;    % alternative: 3,4,5
 
 n = 10^d;
 
- %[f1,gradf1,Hessf1] = first_function(n); % Problem 1
+h = 10^(-2); % alternative 2,4,6,8,10,12 
 
- %[f2,gradf2, Hessf2] = second_function(n); % Problem 31
+[f1,gradf1,Hessf1] = first_function(n); % Problem 1
 
- [f3, gradf3, Hessf3] = third_function(n); % Problem 16
+%[f2,gradf2, Hessf2] = second_function(n); % Problem 31
+
+%[f3, gradf3, Hessf3] = third_function(n); % Problem 16
 
 %%%%%%%% END SECOND POINT
 
@@ -65,6 +67,8 @@ n = 10^d;
 % error = rand(n,10);     % matrix of random variable to add to the starting point 
 % X_f1 = X_f1 + error;    % each column of this vector represent a starting point
 
+x_f1 = X_f1(:,1);        % used for the finite differences implementation
+
 % construction of the 10 points for f2 
 
 % X_f2 = repmat(x_f2, 1, 10);
@@ -96,9 +100,9 @@ c = 1e-4;
 kmax = 1000;
 tolgrad = 1e-4;
 btmax = 40;
-%type_tao = 'Gershgorin';
-%type_tao = 'Eigen';
-type_tao = 'Cholesky';
+% type_tao = 'Gershgorin';
+type_tao = 'Eigen';
+% type_tao = 'Cholesky';
 
 
 % calling the method:
@@ -266,6 +270,7 @@ soltol1 = 10^-5;
 % disp(['Mean convergence rate (in case of success): ', num2str(sum(result_second_function.*conv_rate_2)/sum(result_second_function))])
 % disp('******************************************')
 
+<<<<<<< HEAD
 for i = 1:1:10
 
     disp(['**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT ', num2str(i), ': STARTED *****']);
@@ -332,3 +337,72 @@ disp(['Mean N. of Iterations (in case of success): ', num2str(round(sum(result_t
 disp(['Mean N. tao used (in case of success): ', num2str(round(sum(result_third_function.*number_tao_3)/sum(result_third_function)))])
 disp(['Mean convergence rate (in case of success): ', num2str(sum(result_third_function.*conv_rate_3)/sum(result_third_function))])
 disp('******************************************')
+=======
+% for i = 1:1:10
+% 
+%     disp(['**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT ', num2str(i), ': STARTED *****']);
+%     tic;
+%     [x3k, f3k, gradf3k_norm, k3, x3seq, f3seq, b3tseq, taoseq3] = ...
+%         Modified_Newton_method(X_f3(:,i), f3, gradf3, Hessf3, ...
+%         kmax, tolgrad, c, rho, btmax, type_tao);
+%     t = toc;
+% 
+%     disp(['**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT ', num2str(i), ': FINISHED *****']);
+% 
+%     disp(['Time: ', num2str(t), ' seconds']);
+% 
+%     disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
+%     disp('************************************')
+%     disp(['N. tao used: ', num2str(nnz(taoseq3))])
+%     disp(['f(xk): ', num2str(f3k)])
+%     disp(['gradfk_norm: ', num2str(gradf3k_norm)])
+%     disp(['N. of Iterations: ', num2str(k3),'/',num2str(kmax), ';'])
+%     disp(['Rate of convergence: ', num2str(convergence_rate(x3seq)), ';'])
+%     disp('************************************')
+% 
+%     if k3 == kmax
+%         result_third_function(i) = 0;
+%         disp('FAIL')
+%         disp('************************************')
+%     else
+%         result_third_function(i) = 1;
+%         disp('SUCCESS')
+%         disp('************************************')
+%     end
+%     disp(' ')
+% 
+%     time_3(i) = t;
+%     iteration_3(i) = k3;
+%     number_tao_3(i) = nnz(taoseq3);
+%     conv_rate_3(i) = convergence_rate(x3seq);
+% 
+% end
+% 
+% figure; 
+% plot(1:k3, f3seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
+% grid on;
+% xlabel('Iterations (k)');
+% ylabel('Values for the Banded trigonometric problem'); 
+% 
+% figure;
+% hold on;
+% bar(1:k3, taoseq3 .* (taoseq3 >= 0), 'FaceColor', 'blue', 'EdgeColor', 'black'); % positive value
+% bar(1:k3, taoseq3 .* (taoseq3 < 0), 'FaceColor', 'red', 'EdgeColor', 'black'); % negative
+% hold off
+% grid on;
+% xlabel('Iterations (k)');
+% ylabel('Tao values for the Banded trigonometric problem'); 
+% 
+% disp(' ')
+% disp(' ')
+% disp(' ')
+% disp('******************************************')
+% 
+% disp('**** RESULTS FOR THE THIRD FUNCTION *****')
+% disp(['N. of success: ', num2str(sum(result_third_function))])
+% disp(['Mean N. of Iterations (in case of success): ', num2str(round(sum(result_third_function.*iteration_3)/sum(result_third_function))),'/',num2str(kmax), ';'])
+% disp(['Mean N. tao used (in case of success): ', num2str(round(sum(result_third_function.*number_tao_3)/sum(result_third_function)))])
+% disp(['Mean convergence rate (in case of success): ', num2str(sum(result_third_function.*conv_rate_3)/sum(result_third_function))])
+% disp('******************************************')
+
+>>>>>>> 4029462a4e1a9c366739540e8ea8659cbc239c37

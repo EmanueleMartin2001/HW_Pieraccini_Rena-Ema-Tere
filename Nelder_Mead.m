@@ -5,12 +5,12 @@ function [x_opt, fx_opt, k, x_seq, f_seq, singular] = Nelder_Mead(X, f, varargin
 % f = is the function handle that we want to work with
 
 % If the following parameters are not provided, they are set to default values
-% kmax = maximum number of iterations allowed  (defualt = 200)
-% tol = tolerance value for stopping criterion (default = 10^(-6))
-% rho = reflection's coefficient               (default = 1)
-% chi = expantion's coefficient                (default = 2)
-% gamma = contraction's coefficient            (default = 0.5)   
-% sigma = shrinkage's coefficient              (default = 0.5)
+% kmax = maximum number of iterations allowed           (defualt = 200)
+% tol = relative tolerance value for stopping criterion (default = 10^(-6))
+% rho = reflection's coefficient                        (default = 1)
+% chi = expantion's coefficient                         (default = 2)
+% gamma = contraction's coefficient                     (default = 0.5)   
+% sigma = shrinkage's coefficient                       (default = 0.5)
 
 %% OUTPUTS
 % x_opt = best point found
@@ -81,7 +81,7 @@ values_indices(:,2) = new_indices; %this matrix contains 2 columns;
 %% the algorithm
 
 % f_bar = mean(values_indices(:,1)); % VARIANCE STOP CRIT
-% variance = sum((values_indices(:,1)-f_bar).^2)/n; VARIANCE STOP CRIT
+% variance = sum((values_indices(:,1)-f_bar).^2)/n; %VARIANCE STOP CRIT
 while k < kmax &&... % check ix x_{1} and x_{n+1} are close or f(x_{1}) is close to f(x_{n+1})
         (abs((values_indices(1,1)-values_indices(n+1,1))/values_indices(1,1)) > tol...
         || norm(X(values_indices(n+1,2),:)-X(values_indices(1,2),:),1)/norm(X(values_indices(1,2),:),1) > tol)

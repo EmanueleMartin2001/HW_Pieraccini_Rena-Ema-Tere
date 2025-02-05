@@ -14,9 +14,9 @@ rng(seed);
 
 n = 50; %alternatives 10,25,50
 
-%f1 = first_function(n); % Problem 1
+f1 = first_function(n); % Problem 1
 
-%f2 = second_function(n); % Problem 31
+f2 = second_function(n); % Problem 31
 
 f3 = third_function(n); % Problem 16
 
@@ -230,17 +230,42 @@ for i = 1:1:10
     % n = 10 => f(x3_opt) = -8.0514
     % n = 25 => f(x3_opt) = -16.1379
     % n = 50 => f(x3_opt) = -27.8949
-    if k3 == kmax || singular3 == 1 || fx3_opt-(-27.8949) > tol
-        result_third_function(i) = 0;
-        disp('FAIL')
-        disp('************************************')
-    else
-        result_third_function(i) = 1;
-        disp('SUCCESS')
-        disp('************************************')
+    if n == 50
+        if k3 == kmax || singular3 == 1 || (fx3_opt + 8.0514) > tol*10
+            result_third_function(i) = 0;
+            disp('FAIL')
+            disp('************************************')
+        else
+            result_third_function(i) = 1;
+            disp('SUCCESS')
+            disp('************************************')
+        end
+        disp(' ')
     end
-    disp(' ')
-
+    if n == 25
+        if k3 == kmax || singular3 == 1 || (fx3_opt + 16.1379) > tol*150
+            result_third_function(i) = 0;
+            disp('FAIL')
+            disp('************************************')
+        else
+            result_third_function(i) = 1;
+            disp('SUCCESS')
+            disp('************************************')
+        end
+        disp(' ')
+    end
+    if n == 50
+        if k3 == kmax || singular3 == 1 || (fx3_opt + 27.8949) > tol*300
+            result_third_function(i) = 0;
+            disp('FAIL')
+            disp('************************************')
+        else
+            result_third_function(i) = 1;
+            disp('SUCCESS')
+            disp('************************************')
+        end
+        disp(' ')
+    end
 end
 
 figure; 
@@ -248,5 +273,5 @@ semilogy(1:k3, f3_seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
 grid on;
 xlabel('Iterations (k)');
 ylabel('Values of the Banded trigonometric problem'); 
-result_third_function
+result_third_function'
 

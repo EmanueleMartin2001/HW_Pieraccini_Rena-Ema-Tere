@@ -14,6 +14,9 @@ function [f1, gradf1, Hessf1] = first_function(n)
     f1_grad_comp{n} = @(x) -200*(x(n-1)^2 - x(n));
     
     gradf1 = @(x) cell2mat(cellfun(@(f1_grad_comp) f1_grad_comp(x), f1_grad_comp, 'UniformOutput', false));
+
+
+    
     
     % computing the Hessian in sparse mode
     
@@ -37,4 +40,5 @@ function [f1, gradf1, Hessf1] = first_function(n)
                     spdiags (cell2mat(cellfun(@(A1) A1(x), A1, 'UniformOutput', false)),0, n,n)+...
                     spdiags (cell2mat(cellfun(@(C1) C1(x), C1, 'UniformOutput', false)),+1, n,n);
 end
+
 
