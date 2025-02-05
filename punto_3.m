@@ -337,7 +337,7 @@ disp(['Mean N. of Iterations (in case of success): ', num2str(round(sum(result_t
 disp(['Mean N. tao used (in case of success): ', num2str(round(sum(result_third_function.*number_tao_3)/sum(result_third_function)))])
 disp(['Mean convergence rate (in case of success): ', num2str(sum(result_third_function.*conv_rate_3)/sum(result_third_function))])
 disp('******************************************')
-=======
+
 % for i = 1:1:10
 % 
 %     disp(['**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT ', num2str(i), ': STARTED *****']);
@@ -405,4 +405,3 @@ disp('******************************************')
 % disp(['Mean convergence rate (in case of success): ', num2str(sum(result_third_function.*conv_rate_3)/sum(result_third_function))])
 % disp('******************************************')
 
->>>>>>> 4029462a4e1a9c366739540e8ea8659cbc239c37
