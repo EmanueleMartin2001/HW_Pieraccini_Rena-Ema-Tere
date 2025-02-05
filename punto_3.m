@@ -52,7 +52,7 @@ end
 
 % construction of the test point for f2
 
-x_f2 = -ones(n,1);
+% x_f2 = -ones(n,1);
 
 % construction of the test point for f3
 
@@ -66,6 +66,7 @@ X_f1 = X_f1(:,1:1:10);             % rescale of the matrix
 
 error = rand(n,10);     % matrix of random variable to add to the starting point 
 X_f1 = X_f1 + error;    % each column of this vector represent a starting point
+
 x_f1 = X_f1(:,1);        % used for the finite differences implementation
 
 % construction of the 10 points for f2 
@@ -96,7 +97,7 @@ x_f1 = X_f1(:,1);        % used for the finite differences implementation
 rho = 0.5;
 c = 1e-4;
 
-kmax = 1000;
+kmax = 10000;
 tolgrad = 1e-4;
 btmax = 40;
 % type_tao = 'Gershgorin';
@@ -128,77 +129,78 @@ conv_rate_3 = zeros(10,1);
 
 soltol1 = 10^-5;
 
-% for i = 1:1:10
-% 
-%     disp(['**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT ', num2str(i), ': STARTED *****']);
-%     tic;
-%     [x1k, f1k, gradf1k_norm, k1, x1seq,f1seq, bt1seq, taoseq1] = ...
-%         Modified_Newton_method(X_f1(:,i), f1, gradf1, Hessf1, ...
-%         kmax, tolgrad, c, rho, btmax, type_tao);
-%     t = toc;
-% 
-%     disp(['**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT ', num2str(i), ': FINISHED *****']);
-% 
-%     disp(['Time: ', num2str(t), ' seconds']);
-% 
-%     disp('**** MODIFIED NEWTON METHOD : RESULTS *****');
-%     disp('************************************');
-%     disp(['N. tao used: ', num2str(nnz(taoseq1))]);
-%     disp(['f(xk): ', num2str(f1k)]);
-%     disp(['gradfk_norm: ', num2str(gradf1k_norm)]);
-% 
-%     disp(['N. of Iterations: ', num2str(k1),'/',num2str(kmax), ';']);
-%     disp(['Rate of convergence: ', num2str(convergence_rate(x1seq)), ';']);
-%     disp('************************************');
-% 
-%     if k1 == kmax
-%         result_first_function(i) = 0;
-%         disp('FAIL')
-%         disp('************************************')
-%     else
-%         if (norm(x1k-ones(n,1)) < soltol1)
-%             result_first_function(i) = 1;
-%             disp('SUCCESS')
-%             disp('************************************')
-%             success_k1 = k1;
-%             success_f1seq = f1seq;
-%             success_taoseq1 = taoseq1;
-%         else
-%             result_first_function(i) = 0;
-%             disp('FAIL')
-%             disp('************************************')
-%         end
-%     end
-%     disp(' ')
-%    time_1(i) = t;
-%    iteration_1(i) = k1;
-%    number_tao_1(i) = nnz(taoseq1);
-%    conv_rate_1(i) = convergence_rate(x1seq);
-% end
-% 
-% figure; 
-% semilogy(1:success_k1, success_f1seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
-% grid on;
-% xlabel('Iterations (k)');
-% ylabel('Values of the Rosenbrock function'); 
-% 
-% figure;
-% bar(1:success_k1, success_taoseq1, 'FaceColor', 'blue', 'EdgeColor', 'black')
-% grid on;
-% xlabel('Iterations (k)');
-% ylabel('Tao values for the Rosenbrock function'); 
-% 
-% disp(' ')
-% disp(' ')
-% disp(' ')
-% disp('******************************************')
-% 
-% disp('**** RESULTS FOR THE FIRST FUNCTION *****')
-% disp(['N. of success: ', num2str(sum(result_first_function))])
-% disp(['Mean N. of Iterations (in case of success): ', num2str(round(sum(result_first_function.*iteration_1)/sum(result_first_function))),'/',num2str(kmax), ';'])
-% disp(['Mean N. tao used (in case of success): ', num2str(round(sum(result_first_function.*number_tao_1)/sum(result_first_function)))])
-% disp(['Mean convergence rate (in case of success): ', num2str(sum(result_first_function.*conv_rate_1)/sum(result_first_function))])
-% disp('******************************************')
+for i = 1:1:10
+
+    disp(['**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT ', num2str(i), ': STARTED *****']);
+    tic;
+    [x1k, f1k, gradf1k_norm, k1, x1seq,f1seq, bt1seq, taoseq1] = ...
+        Modified_Newton_method(X_f1(:,i), f1, gradf1, Hessf1, ...
+        kmax, tolgrad, c, rho, btmax, type_tao);
+    t = toc;
+
+    disp(['**** MODIFIED NEWTON METHOD FOR THE FIRST FUNCTION, POINT ', num2str(i), ': FINISHED *****']);
+
+    disp(['Time: ', num2str(t), ' seconds']);
+
+    disp('**** MODIFIED NEWTON METHOD : RESULTS *****');
+    disp('************************************');
+    disp(['N. tao used: ', num2str(nnz(taoseq1))]);
+    disp(['f(xk): ', num2str(f1k)]);
+    disp(['gradfk_norm: ', num2str(gradf1k_norm)]);
+
+    disp(['N. of Iterations: ', num2str(k1),'/',num2str(kmax), ';']);
+    disp(['Rate of convergence: ', num2str(convergence_rate(x1seq)), ';']);
+    disp('************************************');
+
+    if k1 == kmax
+        result_first_function(i) = 0;
+        disp('FAIL')
+        disp('************************************')
+    else
+        if (norm(x1k-ones(n,1)) < soltol1)
+            result_first_function(i) = 1;
+            disp('SUCCESS')
+            disp('************************************')
+            success_k1 = k1;
+            success_f1seq = f1seq;
+            success_taoseq1 = taoseq1;
+        else
+            result_first_function(i) = 0;
+            disp('FAIL')
+            disp('************************************')
+        end
+    end
+    disp(' ')
+   time_1(i) = t;
+   iteration_1(i) = k1;
+   number_tao_1(i) = nnz(taoseq1);
+   conv_rate_1(i) = convergence_rate(x1seq);
+
+end
+
+figure; 
+semilogy(1:success_k1, success_f1seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
+grid on;
+xlabel('Iterations (k)');
+ylabel('Values of the Rosenbrock function'); 
+
+figure;
+bar(1:success_k1, success_taoseq1, 'FaceColor', 'blue', 'EdgeColor', 'black')
+grid on;
+xlabel('Iterations (k)');
+ylabel('Tao values for the Rosenbrock function'); 
+
+disp(' ')
+disp(' ')
+disp(' ')
+disp('******************************************')
+
+disp('**** RESULTS FOR THE FIRST FUNCTION *****')
+disp(['N. of success: ', num2str(sum(result_first_function))])
+disp(['Mean N. of Iterations (in case of success): ', num2str(round(sum(result_first_function.*iteration_1)/sum(result_first_function))),'/',num2str(kmax), ';'])
+disp(['Mean N. tao used (in case of success): ', num2str(round(sum(result_first_function.*number_tao_1)/sum(result_first_function)))])
+disp(['Mean convergence rate (in case of success): ', num2str(sum(result_first_function.*conv_rate_1)/sum(result_first_function))])
+disp('******************************************')
 
 
 % for i = 1:1:10
@@ -267,7 +269,7 @@ soltol1 = 10^-5;
 % disp(['Mean N. tao used (in case of success): ', num2str(round(sum(result_second_function.*number_tao_2)/sum(result_second_function)))])
 % disp(['Mean convergence rate (in case of success): ', num2str(sum(result_second_function.*conv_rate_2)/sum(result_second_function))])
 % disp('******************************************')
-% 
+
 % for i = 1:1:10
 % 
 %     disp(['**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT ', num2str(i), ': STARTED *****']);
