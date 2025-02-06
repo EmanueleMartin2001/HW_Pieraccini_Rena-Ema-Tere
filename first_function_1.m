@@ -8,7 +8,7 @@ function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
     % By default, incrementation h will be assigned to 0.0001
 
     if nargin == 1
-        method = 'exact'; % Metodo di default
+        method = "exact"; % Metodo di default
     end
 
     if nargin == 2
@@ -21,7 +21,7 @@ function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
     % gradient construction:
 
     switch method
-        case 'exact'
+        case "exact"
             f1_grad_comp = cell(n,1);
     
             f1_grad_comp{1} = @(x) 400*x(1)^3 -400*x(1)*x(2) + 2*x(1) - 2;
@@ -67,7 +67,7 @@ function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
         % to minimize the computational times and storage memory
         
         
-        case 'forward'
+        case "forward"
             gradf1 = forward_difference(n, h, f1);
             
             % calcolo Hessiana 
@@ -78,8 +78,8 @@ function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
             B1 = cell(n,1);
             C1 = cell(n,1);
             
-            incremento_primo=zeros(1, n);
-            incremento_primo1=zeros(1, n);
+            incremento_primo=zeros(n,1);
+            incremento_primo1=zeros(n,1);
 
             incremento_primo(1)=h;
             incremento_primo1(2)=h;
@@ -91,9 +91,9 @@ function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
 
             for i=2:n-1
                              
-                incremento_i=zeros(1, n);
-                incremento_i0=zeros(1, n);
-                incremento_i1=zeros(1, n);
+                incremento_i=zeros(n,1);
+                incremento_i0=zeros(n,1);
+                incremento_i1=zeros(n,1);
 
                 incremento_i(i)=h;
                 incremento_i0(i-1)=h;
@@ -108,8 +108,8 @@ function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
             end
             
             
-            incremento_ultimo=zeros(1, n);
-            incremento_ultimo1=zeros(1, n);
+            incremento_ultimo=zeros(n,1);
+            incremento_ultimo1=zeros(n,1);
 
             incremento_ultimo(n)=h;
             incremento_ultimo1(n-1)=h;
@@ -124,7 +124,7 @@ function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
                 
       
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        case 'centered'
+        case "centered"
             gradf1 = centered_difference(n, h, f1);
 
             % computing the Hessian in sparse mode
@@ -133,8 +133,8 @@ function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
             B1 = cell(n,1);
             C1 = cell(n,1);
             
-            incremento_primo=zeros(1, n);
-            incremento_primo1=zeros(1, n);
+            incremento_primo=zeros(n,1);
+            incremento_primo1=zeros(n,1);
 
             incremento_primo(1)=h;
             incremento_primo1(2)=h;
@@ -146,9 +146,9 @@ function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
 
             for i=2:n-1
                              
-                incremento_i=zeros(1, n);
-                incremento_i0=zeros(1, n);
-                incremento_i1=zeros(1, n);
+                incremento_i=zeros(n,1);
+                incremento_i0=zeros(n,1);
+                incremento_i1=zeros(n,1);
 
                 incremento_i(i)=h;
                 incremento_i0(i-1)=h;
@@ -163,8 +163,8 @@ function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
             end
             
             
-            incremento_ultimo=zeros(1, n);
-            incremento_ultimo1=zeros(1, n);
+            incremento_ultimo=zeros(n,1);
+            incremento_ultimo1=zeros(n,1);
 
             incremento_ultimo(n)=h;
             incremento_ultimo1(n-1)=h;
@@ -192,8 +192,8 @@ function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
             B1 = cell(n,1);
             C1 = cell(n,1);
             
-            incremento_primo=zeros(1, n);
-            incremento_primo1=zeros(1, n);
+            incremento_primo=zeros(n,1);
+            incremento_primo1=zeros(n,1);
 
             incremento_primo(1)=h;
             incremento_primo1(2)=h;
@@ -205,9 +205,9 @@ function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
 
             for i=2:n-1
                              
-                incremento_i=zeros(1, n);
-                incremento_i0=zeros(1, n);
-                incremento_i1=zeros(1, n);
+                incremento_i=zeros(n,1);
+                incremento_i0=zeros(n,1);
+                incremento_i1=zeros(n,1);
 
                 incremento_i(i)=h;
                 incremento_i0(i-1)=h;
@@ -222,8 +222,8 @@ function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
             end
             
             
-            incremento_ultimo=zeros(1, n);
-            incremento_ultimo1=zeros(1, n);
+            incremento_ultimo=zeros(n,1);
+            incremento_ultimo1=zeros(n,1);
 
             incremento_ultimo(n)=h;
             incremento_ultimo1(n-1)=h;
