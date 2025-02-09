@@ -18,13 +18,13 @@ rng(seed);
 
 %%%%%%%% SECOND POINT %%%%%%%%
 
-d =3;    % alternative: 3,4,5
+d =2;    % alternative: 3,4,5
 
 n = 10^d;
 
 H = 10.^(-2*(1:6)); %vector with all the increments to be tested
 
-methods= ["forward","centered","backward"];
+methods= ["forward","centered","backward","exact"];
 
 for a = 1:length(H) %for every increment
     h=H(a); 
@@ -32,7 +32,7 @@ for a = 1:length(H) %for every increment
     for j = 1:length(methods) %for every method
         method=methods(j);
 
-        [f1,gradf1,Hessf1] = third_function_3(n,method,h); % Problem 1
+        [f1,gradf1,Hessf1] = second_function_2(n,method,h); % Problem 1
 
         
         % construction of the test point x0 for f1:
