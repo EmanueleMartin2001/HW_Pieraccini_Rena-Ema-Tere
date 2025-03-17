@@ -1,6 +1,6 @@
 function [xk, fk, gradfk_norm, k, xseq, fseq, btseq, taoseq] = ...
     Modified_Newton_method(x0, f, gradf, Hessf, ...
-    kmax, tolgrad, c1, rho, btmax, type_tao)
+    kmax, tolgrad, delta_step, c1, rho, btmax, type_tao)
 %
 % [xk, fk, gradfk_norm, k, xseq, btseq] = ...
     % newton_bcktrck(x0, f, gradf, Hessf, ...
@@ -51,8 +51,10 @@ gradfk = gradf(xk);
 k = 0;
 gradfk_norm = norm(gradfk);
 delta = sqrt(eps);
-
-while k < kmax && gradfk_norm >= tolgrad
+step_norm = delta_step + 1; %so that the first while condition is always satisfied
+while k < kmax && (gradfk_norm >= tolgrad || step_norm > delta_step)
+    %stopping condition given by the norm of the gradient and the norm of
+    %the step x_{k+1}-x_{k}
 
     Hk = Hessf(xk);   % compute the Hessian
     switch type_tao 
@@ -114,6 +116,9 @@ while k < kmax && gradfk_norm >= tolgrad
     
     % Store current xk in xseq
     xseq(:, k) = xk;
+    if k > 1
+        step_norm = norm(xseq(:,k)-xseq(:,k-1),2);
+    end
     % Store current fk in fseq
     fseq(k) = fk;
     % Store bt iterations in btseq
