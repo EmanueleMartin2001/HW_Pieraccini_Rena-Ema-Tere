@@ -12,11 +12,9 @@ rng(seed);
 
 %%%%%%%% SECOND POINT %%%%%%%%
 
-n = 25; %alternatives 10,25,50
+n = 10; %alternatives 10,25,50
 
 % f1 = first_function(n); % Problem 1
-
-% f2 = second_function(n); % Problem 31
 
 f2 = second_function_75(n) % Problem 75
 

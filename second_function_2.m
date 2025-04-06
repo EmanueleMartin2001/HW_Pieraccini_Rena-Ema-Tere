@@ -110,9 +110,7 @@ function [f1, gradf1, Hessf1] = second_function_2(n,method,h)
                 
                 A1{i}=@(x) (f1(x+incremento_i+incremento_i)-f1(x+incremento_i)-f1(x+incremento_i)+f1(x))/(h^2);
                 B1{i}=@(x) (f1(x+incremento_i+incremento_i1)-f1(x+incremento_i)-f1(x+incremento_i1)+f1(x))/(h^2);
-                C1{i}=@(x) (f1(x+incremento_i+incremento_i0)-f1(x+incremento_i)-f1(x+incremento_i0)+f1(x))/(h^2);
-
-                            
+                C1{i}=@(x) (f1(x+incremento_i+incremento_i0)-f1(x+incremento_i)-f1(x+incremento_i0)+f1(x))/(h^2);              
             end
             
             

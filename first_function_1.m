@@ -1,4 +1,4 @@
-function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
+function [f1, gradf1, Hessf1] = first_function_1(n, method, h, adaptive)
 
     % By default, this function calculates the gradient and the Hessian
     % using the exact method.
@@ -7,16 +7,19 @@ function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
     % one (between 'centered','forward','backward'). 
     % By default, incrementation h will be assigned to 0.0001
 
+    %method can be exact or semplified_forward
     if nargin == 1
-        method = "exact"; % Metodo di default
+        method = "exact";
+    end
+    if nargin == 2
+        h = 0.0001;
+        adaptive = false
+    end
+    if nargin == 3
+        adaptive = false
     end
 
-    if nargin == 2
-        h = 0.0001; % Incremento di default
-    end
-    
-    
-    f1 = @(x) sum(100 * (x(1:end-1).^2 -x(2:end)).^2 + (x(1:end-1)-1).^2);
+f1 = @(x) sum(100 * (x(2:end) - x(1:end-1).^2).^2 + (x(1:end-1) - 1).^2);
 
     % gradient construction:
 
@@ -240,9 +243,53 @@ function [f1, gradf1, Hessf1] = first_function_1(n,method,h)
         
        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
         
+        case "simplified_forward"
+
+            if adaptive == false
+                hi = @(x) h;
+            else
+                hi = @(x) h * abs(x);
+            end 
+            
+            f1_grad_comp = cell(n,1);
+            f1_grad_comp{1} = @(x) 100*(hi(x(1))^3 + 6*x(1)^2*hi(x(1)) + 4*x(1)*hi(x(1))^2 ...
+                              -2*x(2)*hi(x(1)) + 4*x(1)^3 - 4*x(1)*x(2)) + hi(x(1))^2 + 2*x(1)*hi(x(1))-2*hi(x(1));
         
+            for i = 2:1:(n-1)
+                f1_grad_comp{i} = @(x) 202*x(i)-200*x(i-1)^2 - 2 + 101*hi(x(i)) + 100*(6*x(i)^2*hi(x(i)) + hi(x(i))^3 ...
+                                       + 4*x(i)*hi(x(i))^2 + 4*x(i)^3 - 2*hi(x(i))*x(i+1) - 4*x(i)*x(i+1));
+            end
+            f1_grad_comp{n} = @(x) 100*(hi(x(n)) + 2*x(n) - 2*x(n-1)^2);
+
+            gradf1 = @(x) cell2mat(cellfun(@(f1_grad_comp) f1_grad_comp(x), f1_grad_comp, 'UniformOutput', false));
+            
+            % computing the Hessian in sparse mode
+            
+            A1 = cell(n,1); %diag
+            B1 = cell(n,1); %lower diag
+            C1 = cell(n,1); %upper one
+            
+            A1{1} = @(x) 100*(24*x(1)*hi(x(1)) + 14*hi(x(1))^2 + 12*x(1)^2 ...
+                    -4*x(2)) + 2*hi(x(1));
+            B1{1} = @(x) -200*hi(x(1)) - 400*x(1); 
+            C1{1} = @(x) 0; %forced by spdiags
+            for i = 2:1:(n-1) 
+                A1{i} = @(x) 100*(2 + 14*hi(x(i))^2 + 12*x(i)^2 + 24*x(i)*hi(x(i)) - 4*x(i+1)) + 2;
+                B1{i} = @(x) -200*hi(x(i)) - 400*x(i);
+                C1{i} = B1{i-1};
+            end
+            A1{n} = @(x) 200;
+            B1{n} = @(x) 0; %forced by spdiags
+            C1{n} = B1{n-1};
+            
+            Hessf1 = @(x) spdiags (cell2mat(cellfun(@(B1) B1(x), B1, 'UniformOutput', false)),-1, n,n)+ ...
+                            spdiags (cell2mat(cellfun(@(A1) A1(x), A1, 'UniformOutput', false)),0, n,n)+...
+                            spdiags (cell2mat(cellfun(@(C1) C1(x), C1, 'UniformOutput', false)),+1, n,n);
+
+
+
         otherwise
-            error('Metodo non valido! Usa "backward", "forward", o "centered".');
+            error('Metodo non valido! Usa "backward", "forward", "centered", o "simplified_forward".');
     end
     
     
