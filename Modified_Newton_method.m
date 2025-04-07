@@ -1,4 +1,4 @@
-function [xk, fk, gradfk_norm, k, xseq, fseq, btseq, taoseq, gradfk] = ...
+function [xk, fk, gradfk_norm, k, xseq, fseq, btseq, taoseq, gradfk, cos_grad] = ...
     Modified_Newton_method(x0, f, gradf, Hessf, ...
     kmax, tolgrad, delta_step, c1, rho, btmax, type_tao)
 %
@@ -33,6 +33,9 @@ function [xk, fk, gradfk_norm, k, xseq, fseq, btseq, taoseq, gradfk] = ...
 % sequence
 % btseq = 1-by-k vector where elements are the number of backtracking
 % iterations at each optimization step.
+% gradfk = gradient of the last iteration
+% cos_grad = cosine between two consecutives gradients (used as stopping
+% criterion)
 %
 
 % Function handle for the armijo condition
@@ -51,11 +54,11 @@ gradfk = gradf(xk);
 k = 0;
 gradfk_norm = norm(gradfk);
 delta = sqrt(eps);
+cos_grad = 0;
 step_norm = delta_step + 1; %so that the first while condition is always satisfied
 while k < kmax && (gradfk_norm >= tolgrad || step_norm > delta_step)
     %stopping condition given by the norm of the gradient and the norm of
     %the step x_{k+1}-x_{k}
-
     Hk = Hessf(xk);   % compute the Hessian
     switch type_tao 
         case 'Cholesky'
@@ -108,6 +111,12 @@ while k < kmax && (gradfk_norm >= tolgrad || step_norm > delta_step)
     % Update xk, fk, gradfk_norm
     xk = xnew;
     fk = fnew;
+    if mod(k,10) == mod(5,10) % to not check it at any iterations
+        cos_grad = abs(gradfk'*gradf(xk))./(norm(gradfk)*norm(gradf(xk)));
+        if cos_grad < 10^(-3) %it means that the new direction is still bad (similar to the previous one)
+            break
+        end
+    end
     gradfk = gradf(xk);
     gradfk_norm = norm(gradfk);
     
@@ -136,5 +145,6 @@ taoseq = taoseq(1:k);
 
 % "Add" x0 at the beginning of xseq (otherwise the first el. is x1)
 xseq = [x0, xseq];
+
 
 end
