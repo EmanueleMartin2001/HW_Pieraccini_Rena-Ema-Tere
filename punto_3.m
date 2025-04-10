@@ -10,12 +10,7 @@ rng(seed);
 
 
 
-
-d = 3;    % alternative: 3,4,5
-
-n = 10^d;
-
-h = 10^(-4); % alternative 2,4,6,8,10,12 
+h = 10^(-12); % alternative 2,4,6,8,10,12 
 
 esponenti = 2:2:12;
 H = 10.^(-esponenti); %vettore con gli esponenti da 2 a 12 pari
@@ -24,15 +19,13 @@ H = 10.^(-esponenti); %vettore con gli esponenti da 2 a 12 pari
 
 % [f2,gradf2, Hessf2] = second_function_75(n); % Problem 75
 
-[f3, gradf3, Hessf3] = third_function_3(n, "simplified_forward", h, false); % Problem 16
-
 dimensioni = [10^3,10^4,10^5];
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETERS SETTINGS 
 
-rho = 0.5; %backtracking parameters
+rho = 0.8; %backtracking parameters
 c = 1e-4;
 btmax = 40;
 
@@ -270,18 +263,6 @@ conv_rate_3 = zeros(10,1);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% THIRD FUNCTION (16)
 
-% construction of the test point for f3
-
-x_f3 = ones(n,1);
-
-% construction of the 10 points for f3 
-
-X_f3 = repmat(x_f3, 1, 10);
-X_f3 = X_f3(:,1:1:10);
-
-error = rand(n,10);
-X_f3 = X_f3 + error;
-
 %statistics for the table plot
 
 avg_f_best = [];
@@ -294,15 +275,33 @@ avg_tao_used = [];
 
 %the simulation
 for l = 1:1:3
+    
     n = dimensioni(l);
+
+    [f3, gradf3, Hessf3] = third_function_3(n, "simplified_forward", h, false); % Problem 16
+
+    % construction of the test point for f3
+    
+    x_f3 = ones(n,1);
+    
+    % construction of the other 10 points for f3 
+    
+    X_f3 = repmat(x_f3, 1, 10);
+    X_f3 = X_f3(:,1:1:10);
+    
+    error = rand(n,10);
+    X_f3 = X_f3 + error;
+    X_f3 = [x_f3, X_f3];
+
+
     fbest_iter = []; %to save it in the table
     conv_time_iter = []; %to save it in the table
     norm_grad_iter = []; %to save it in the table
-    for i = 1:1:10
+    for i = 1:1:11
     
         disp(['**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT ', num2str(i), ': STARTED *****']);
         tic;
-        [x3k, f3k, gradf3k_norm, k3, x3seq, f3seq, b3tseq, taoseq3] = ...
+        [x3k, f3k, gradf3k_norm, k3, x3seq, f3seq, b3tseq, taoseq3, gradf_k3, cos_grad3, fail3] = ...
             Modified_Newton_method(X_f3(:,i), f3, gradf3, Hessf3, ...
             kmax, tolgrad, delta_step, c, rho, btmax, type_tao);
         t = toc;
@@ -320,7 +319,7 @@ for l = 1:1:3
         disp(['Rate of convergence: ', num2str(convergence_rate(x3seq)), ';'])
         disp('************************************')
     
-        if k3 == kmax
+        if fail3 == true
             result_third_function(i) = 0;
             disp('FAIL')
             disp('************************************')
@@ -377,8 +376,9 @@ for l = 1:1:3
 end
 
 %table plot
-clmn_labels = ["avg f(best)", "avg norm grad", "avg n iter", "avg time (s)", "n of success/10", "avg roc (in case of success)", "n tao used (in case of success)"];
+clmn_labels = ["avg f(best)", "avg norm grad", "avg n iter", "avg time (s)", "n of success/11", "avg roc (in case of success)", "n tao used (in case of success)"];
 row_names = ["1000", "10000", "100000"];
 T = table(avg_f_best', avg_norm_grad', avg_n_iter', avg_conv_time', n_success', ...
     avg_roc', avg_tao_used', 'VariableNames', clmn_labels, 'RowNames',row_names);
 disp(T)
+%save('C:\Users\marti\OneDrive\Desktop\HW numerical\Pieraccini\HW_Pieraccini_Rena-Ema-Tere\Newton_function1_finiteDiff', 'T')

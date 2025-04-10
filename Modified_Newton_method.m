@@ -1,4 +1,4 @@
-function [xk, fk, gradfk_norm, k, xseq, fseq, btseq, taoseq, gradfk, cos_grad] = ...
+function [xk, fk, gradfk_norm, k, xseq, fseq, btseq, taoseq, gradfk, cos_grad, fail] = ...
     Modified_Newton_method(x0, f, gradf, Hessf, ...
     kmax, tolgrad, delta_step, c1, rho, btmax, type_tao)
 %
@@ -36,6 +36,7 @@ function [xk, fk, gradfk_norm, k, xseq, fseq, btseq, taoseq, gradfk, cos_grad] =
 % gradfk = gradient of the last iteration
 % cos_grad = cosine between two consecutives gradients (used as stopping
 % criterion)
+% fail = boolean to indicate if the convergence has not been reached
 %
 
 % Function handle for the armijo condition
@@ -56,6 +57,7 @@ gradfk_norm = norm(gradfk);
 delta = sqrt(eps);
 cos_grad = 0;
 step_norm = delta_step + 1; %so that the first while condition is always satisfied
+fail = false;
 while k < kmax && (gradfk_norm >= tolgrad || step_norm > delta_step)
     %stopping condition given by the norm of the gradient and the norm of
     %the step x_{k+1}-x_{k}
@@ -105,6 +107,7 @@ while k < kmax && (gradfk_norm >= tolgrad || step_norm > delta_step)
         bt = bt + 1;
     end
     if bt == btmax && fnew > farmijo(fk, alpha, c1_gradfk_pk)
+        fail = true;
         break
     end
     
@@ -114,6 +117,7 @@ while k < kmax && (gradfk_norm >= tolgrad || step_norm > delta_step)
     if mod(k,10) == mod(5,10) % to not check it at any iterations
         cos_grad = abs(gradfk'*gradf(xk))./(norm(gradfk)*norm(gradf(xk)));
         if cos_grad < 10^(-3) %it means that the new direction is still bad (similar to the previous one)
+            fail = true;
             break
         end
     end
