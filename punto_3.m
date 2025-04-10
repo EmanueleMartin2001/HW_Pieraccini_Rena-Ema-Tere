@@ -15,7 +15,7 @@ d = 3;    % alternative: 3,4,5
 
 n = 10^d;
 
-h = 10^(-6); % alternative 2,4,6,8,10,12 
+h = 10^(-4); % alternative 2,4,6,8,10,12 
 
 esponenti = 2:2:12;
 H = 10.^(-esponenti); %vettore con gli esponenti da 2 a 12 pari
