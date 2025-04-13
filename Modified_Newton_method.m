@@ -36,7 +36,8 @@ function [xk, fk, gradfk_norm, k, xseq, fseq, btseq, taoseq, gradfk, cos_grad, f
 % gradfk = gradient of the last iteration
 % cos_grad = cosine between two consecutives gradients (used as stopping
 % criterion)
-% fail = boolean to indicate if the convergence has not been reached
+% fail = string that indicates the kind of insuccess has occured:
+% "success", "btmax", "kmax", "cosine".
 %
 
 % Function handle for the armijo condition
@@ -57,7 +58,7 @@ gradfk_norm = norm(gradfk);
 delta = sqrt(eps);
 cos_grad = 0;
 step_norm = delta_step + 1; %so that the first while condition is always satisfied
-fail = false;
+fail = "success";
 while k < kmax && (gradfk_norm >= tolgrad || step_norm > delta_step)
     %stopping condition given by the norm of the gradient and the norm of
     %the step x_{k+1}-x_{k}
@@ -107,7 +108,7 @@ while k < kmax && (gradfk_norm >= tolgrad || step_norm > delta_step)
         bt = bt + 1;
     end
     if bt == btmax && fnew > farmijo(fk, alpha, c1_gradfk_pk)
-        fail = true;
+        fail = "btmax";
         break
     end
     
@@ -117,7 +118,7 @@ while k < kmax && (gradfk_norm >= tolgrad || step_norm > delta_step)
     if mod(k,10) == mod(5,10) % to not check it at any iterations
         cos_grad = abs(gradfk'*gradf(xk))./(norm(gradfk)*norm(gradf(xk)));
         if cos_grad < 10^(-3) %it means that the new direction is still bad (similar to the previous one)
-            fail = true;
+            fail = "cosine";
             break
         end
     end
@@ -149,6 +150,8 @@ taoseq = taoseq(1:k);
 
 % "Add" x0 at the beginning of xseq (otherwise the first el. is x1)
 xseq = [x0, xseq];
-
+if k == kmax
+    fail = "kmax";
+end
 
 end
