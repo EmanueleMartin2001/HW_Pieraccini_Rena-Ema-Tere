@@ -1,9 +1,10 @@
-rho = 0.5
-c = 1e-04
+rho = 0.8; %backtracking parameters
+c = 1e-05
 btmax = 40
+
 kmax = 1000
 tolgrad = 1e-3
-delta_step = 1e-4
+delta_step = 1e-5
 type_tao = "Cholesky"   %omettibile?
 
 
