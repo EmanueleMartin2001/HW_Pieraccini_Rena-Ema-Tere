@@ -10,7 +10,7 @@ rng(seed);
 
 
 
-h = 10^(-10); % alternative 2,4,6,8,10,12 
+h = 10^(-2); % alternative 2,4,6,8,10,12 
 
 esponenti = 2:2:12;
 H = 10.^(-esponenti); %vettore con gli esponenti da 2 a 12 pari
