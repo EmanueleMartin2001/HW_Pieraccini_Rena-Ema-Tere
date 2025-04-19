@@ -45,7 +45,8 @@ farmijo = @(fk, alpha, c1_gradfk_pk) ...
     fk + alpha * c1_gradfk_pk;
 
 % Initializations
-xseq = zeros(length(x0), kmax);
+n = length(x0);
+xseq = zeros(n, kmax);
 fseq = zeros(1,kmax);
 btseq = zeros(1, kmax);
 taoseq = zeros(1,kmax);
@@ -59,7 +60,7 @@ delta = sqrt(eps);
 cos_grad = 0;
 step_norm = delta_step + 1; %so that the first while condition is always satisfied
 fail = "success";
-while k < kmax && (gradfk_norm >= tolgrad || step_norm > delta_step)
+while k < kmax && (gradfk_norm >= sqrt(n)*tolgrad || step_norm > sqrt(n)*delta_step)
     %stopping condition given by the norm of the gradient and the norm of
     %the step x_{k+1}-x_{k}
     Hk = Hessf(xk);   % compute the Hessian

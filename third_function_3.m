@@ -64,7 +64,12 @@ function [f3, gradf3, Hessf3] = third_function_3(n,method, h, adaptive)
             gradf3 = @(x) cell2mat(cellfun(@(deriv_j) deriv_j(x), deriv_j, 'UniformOutput', false));
         
             %hessian 
-
+            
+            if adaptive == false
+                hi = @(x)sqrt(h); %for the hessian instead of h we use sqrt(h)
+            else
+                hi = @(x)sqrt(h) * abs(x);
+            end 
             A2 = cell(n,1);   % diagonal
             for i = 1:1:n-1
                 A2{i} = @(x) (-i*(cos(x(i)+2*hi(x(i))) - 2*cos(x(i)+hi(x(i))) + cos(x(i)))...

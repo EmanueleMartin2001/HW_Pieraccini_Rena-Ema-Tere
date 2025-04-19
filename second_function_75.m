@@ -80,6 +80,11 @@ switch method
 
         % computing the Hessian in sparse mode
 
+        if adaptive == false
+            hi = @(x)sqrt(h);
+        else
+            hi = @(x)sqrt(h) * abs(x);
+        end 
         A1 = cell(n,1); %diag
         B1 = cell(n,1); %lower diag
         C1 = cell(n,1); %upper diag
