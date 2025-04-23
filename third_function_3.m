@@ -80,7 +80,29 @@ function [f3, gradf3, Hessf3] = third_function_3(n,method, h, adaptive)
         
             Hessf3 = @(x) spdiags (cell2mat(cellfun(@(A2) A2(x), A2, 'UniformOutput', false)),0, n,n);
 
+
+        case "simplified_centered"
             
+            deriv_j = cell(n,1);
+            deriv_j{1} = @(x) 1*sin(x(1))*(1+h^2) + 2*cos(x(1))*(1+h^2)   ;
+            for k = 2:1:n-1
+                deriv_j{k} = @(x) (k*sin(x(k)) + 2*cos(x(k)))*(1+h^2)  ;
+            end
+            deriv_j{n} = @(x) (n*sin(x(n)) - (n-1)*cos(x(n)))*(1+h^2)   ;
+        
+            gradf3 = @(x) cell2mat(cellfun(@(deriv_j) deriv_j(x), deriv_j, 'UniformOutput', false));
+        
+            %hessian 
+
+            A2 = cell(n,1);   % diagonal
+            A2{1} = @(x) (cos(x(1)) - 2* sin(x(1)))*(1+h^2)^2;
+            for k = 2:1:(n-1) 
+                A2{k} = @(x) (k*cos(x(k)) - 2*sin(x(k)))*(1+h^2)^2;
+            end
+            A2{n} = @(x) (n*cos(x(n)) + (n-1)*sin(x(n)))*(1+h^2)^2;
+        
+            Hessf3 = @(x) spdiags (cell2mat(cellfun(@(A2) A2(x), A2, 'UniformOutput', false)),0, n,n);
+
         otherwise
             error('Metodo non valido! Usa "exact", o "simplified_forward.');
     end
