@@ -1,0 +1,136 @@
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 1: START *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 1: FINISHED *****
+Time: 482.8111 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 475
+f(xk): 0.3925
+N. of Iterations: 484/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 2: START *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 2: FINISHED *****
+Time: 499.6231 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 475
+f(xk): 0.39526
+N. of Iterations: 503/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 3: START *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 3: FINISHED *****
+Time: 522.6098 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 476
+f(xk): 0.39449
+N. of Iterations: 524/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 4: START *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 4: FINISHED *****
+Time: 531.367 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 475
+f(xk): 0.39552
+N. of Iterations: 543/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 5: START *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 5: FINISHED *****
+Time: 562.25 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 478
+f(xk): 0.39473
+N. of Iterations: 561/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 6: START *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 6: FINISHED *****
+Time: 571.9943 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 476
+f(xk): 0.39326
+N. of Iterations: 584/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 7: START *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 7: FINISHED *****
+Time: 632.6817 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 475
+f(xk): 0.39416
+N. of Iterations: 601/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 8: START *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 8: FINISHED *****
+Time: 601.2908 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 475
+f(xk): 0.3941
+N. of Iterations: 621/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 9: START *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 9: FINISHED *****
+Time: 619.3966 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 475
+f(xk): 0.39364
+N. of Iterations: 641/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 10: START *****
+**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT 10: FINISHED *****
+Time: 630.7521 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 474
+f(xk): 0.39287
+N. of Iterations: 661/1000;
+************************************
+SUCCESS
+************************************
+ 
+>> result_third_function
+
+result_third_function =
+
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+
+>> 

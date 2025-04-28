@@ -1,0 +1,136 @@
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 1: START *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 1: FINISHED *****
+Time: 121.735 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 0.049539
+N. of Iterations: 19/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 2: START *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 2: FINISHED *****
+Time: 115.5921 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 0.049539
+N. of Iterations: 20/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 3: START *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 3: FINISHED *****
+Time: 117.7849 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 0.04954
+N. of Iterations: 20/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 4: START *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 4: FINISHED *****
+Time: 121.5704 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 0.049539
+N. of Iterations: 21/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 5: START *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 5: FINISHED *****
+Time: 125.635 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 0.04954
+N. of Iterations: 21/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 6: START *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 6: FINISHED *****
+Time: 130.3527 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 0.049539
+N. of Iterations: 22/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 7: START *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 7: FINISHED *****
+Time: 132.2179 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 0.049539
+N. of Iterations: 22/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 8: START *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 8: FINISHED *****
+Time: 133.4075 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 0.04954
+N. of Iterations: 22/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 9: START *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 9: FINISHED *****
+Time: 142.4199 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 0.04954
+N. of Iterations: 22/1000;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 10: START *****
+**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT 10: FINISHED *****
+Time: 132.0746 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 0
+f(xk): 0.04954
+N. of Iterations: 22/1000;
+************************************
+SUCCESS
+************************************
+ 
+>> result_second_function
+
+result_second_function =
+
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+
+>> 

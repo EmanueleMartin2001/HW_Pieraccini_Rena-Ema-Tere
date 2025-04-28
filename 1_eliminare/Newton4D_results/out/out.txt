@@ -1,0 +1,3 @@
+FOR THIS TEST I (RENATO) SET kmax = 10000 AND type_tao = 'Ghershgorin'
+
+NOTHING IT DOESNT WORK
