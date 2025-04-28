@@ -1,6 +1,6 @@
 function [f3, gradf3, Hessf3] = third_function_3(n,method, h, adaptive)
 
-    %method can be exact, simplified_forward, simplified_centered
+    %method can be exact or simplified_forward
     if nargin == 1
         method = "exact";
     end
@@ -104,7 +104,7 @@ function [f3, gradf3, Hessf3] = third_function_3(n,method, h, adaptive)
             Hessf3 = @(x) spdiags (cell2mat(cellfun(@(A2) A2(x), A2, 'UniformOutput', false)),0, n,n);
 
         otherwise
-            error('Metodo non valido! Usa "exact", "simplified_forward or "simplified_centered"');
+            error('Metodo non valido! Usa "exact", o "simplified_forward.');
     end
     
     
