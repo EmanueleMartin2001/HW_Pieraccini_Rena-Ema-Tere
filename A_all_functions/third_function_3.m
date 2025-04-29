@@ -75,8 +75,8 @@ function [f3, gradf3, Hessf3] = third_function_3(n,method, h, adaptive)
                 A2{i} = @(x) (-i*(cos(x(i)+2*hi(x(i))) - 2*cos(x(i)+hi(x(i))) + cos(x(i)))...
                              +2*(sin(x(i)+2*hi(x(i))) - 2*sin(x(i)+hi(x(i))) + sin(x(i))))/(hi(x(i))^2);
             end
-            A2{n} = @(x) (n*(-cos(x(i)+2*hi(x(i))) + 2*cos(x(i)+hi(x(i))) - cos(x(i)))...
-                         +(n-1)*(-sin(x(i)+2*hi(x(i))) + 2*sin(x(i)+hi(x(i))) - sin(x(i))))/(hi(x(i))^2);
+            A2{n} = @(x) (n*(-cos(x(n)+2*hi(x(n))) + 2*cos(x(n)+hi(x(n))) - cos(x(n)))...
+                         +(n-1)*(-sin(x(n)+2*hi(x(n))) + 2*sin(x(n)+hi(x(n))) - sin(x(n))))/(hi(x(n))^2);
         
             Hessf3 = @(x) spdiags (cell2mat(cellfun(@(A2) A2(x), A2, 'UniformOutput', false)),0, n,n);
 
