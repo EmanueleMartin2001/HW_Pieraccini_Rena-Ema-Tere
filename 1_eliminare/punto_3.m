@@ -1,6 +1,6 @@
-clc;
-clear;
-close all;
+% clc;
+% clear;
+% close all;
 
 %% HIGH LEVEL PARAMETERS INITIALIZATION
 
@@ -9,7 +9,7 @@ seed = min([341965, 343316, 284817]);
 rng(seed);
 
 
-h = 10^(-8); % alternative 2,4,6,8,10,12 
+h = 10^(-12); % alternative 2,4,6,8,10,12 
 
 esponenti = 2:2:12;
 H = 10.^(-esponenti); %vettore con gli esponenti da 2 a 12 pari
@@ -20,9 +20,9 @@ dimensioni = [10^3,10^4,10^5];
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETERS SETTINGS 
 
-rho = 0.8; %backtracking parameters
-c = 1e-5;
-btmax = 40;
+rho = 0.6; %backtracking parameters
+c = 1e-4;
+btmax = 60;
 
 kmax = 1000; %stopping conditions
 tolgrad = 1e-3; 
@@ -55,9 +55,9 @@ conv_rate_1 = zeros(10,1);
 conv_rate_2 = zeros(10,1);
 conv_rate_3 = zeros(10,1);
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% % FIRST FUNCTION (1)
-% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% FIRST FUNCTION (1)
+
 % %statistics for the table plot
 % 
 % avg_f_best = [];
@@ -189,10 +189,10 @@ conv_rate_3 = zeros(10,1);
 %     avg_roc', avg_tao_used', 'VariableNames', clmn_labels, 'RowNames',row_names);
 % disp(T1)
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% % SECOND FUNCTION (75)
-% 
-% %statistics for the table plot
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SECOND FUNCTION (75)
+
+% <%statistics for the table plot
 % 
 % avg_f_best = [];
 % avg_norm_grad = [];
@@ -207,7 +207,7 @@ conv_rate_3 = zeros(10,1);
 % 
 %     n = dimensioni(l);
 % 
-%     [f2, gradf2, Hessf2] = second_function_75(n,"simplified_centered", h, false); % Problem 75
+%     [f2, gradf2, Hessf2] = second_function_75(n); % Problem 75
 % 
 %     % construction of the test point for f2
 % 
