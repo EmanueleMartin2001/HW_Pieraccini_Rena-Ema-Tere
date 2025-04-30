@@ -1,0 +1,14 @@
+rho = 0.8; %backtracking parameters
+c = 1e-05
+btmax = 40
+
+kmax = 1000
+tolgrad = 1e-3
+delta_step = 1e-5
+type_tao = "Cholesky"   %omettibile?
+
+
+true optimum value of the function: 
+d = 3  f(xk): -427.4045
+d = 4  f(xk): -4159.9324
+d = 5  f(xk): -41443.7583
