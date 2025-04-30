@@ -9,7 +9,7 @@ seed = min([341965, 343316, 284817]);
 rng(seed);
 
 
-h = 10^(-6); % alternative 2,4,6,8,10,12 
+h = 10^(-12); % alternative 2,4,6,8,10,12 
 
 esponenti = 2:2:12;
 H = 10.^(-esponenti); %vettore con gli esponenti da 2 a 12 pari
@@ -340,7 +340,7 @@ for l = 1:1:3
 
     n = dimensioni(l);
 
-    [f3, gradf3, Hessf3] = third_function_3(n, "simplified_forward", h, true); % Problem 16
+    [f3, gradf3, Hessf3] = third_function_3(n, "simplified_forward", h, false); % Problem 16
 
     % construction of the test point for f3
 
