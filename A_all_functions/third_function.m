@@ -1,4 +1,4 @@
-afunction [f3, gradf3, Hessf3] = third_function(n)
+function [f3, gradf3, Hessf3] = third_function(n)
 
     fk = cell(n,1);
     fk{1} = @(x) 1*((1-cos(x(1)) + 0 - sin(x(2))));
