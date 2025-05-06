@@ -10,11 +10,14 @@ clear
 x0=500;
 y0=100;
 
-f_Rosenbrock = @(x) 100*(x(2)-x(1)^2)^2 + (1-x(1))^2;
+%f_Rosenbrock = @(x) 100*(x(2)-x(1)^2)^2 + (1-x(1))^2;
+f_16 = @(x) (1-cos(x(1)) - sin(x(2))) + 2* ((1-cos(x(2))) + sin(x(1))) ; %2d problem 16
 
-gradf_Rosenbrock = @(x) [400*x(1)^3 - 400*x(1)*x(2) + 2*x(1) - 2 ; 200*( x(2) - x(1)^2 )];
+%gradf_Rosenbrock = @(x) [400*x(1)^3 - 400*x(1)*x(2) + 2*x(1) - 2 ; 200*( x(2) - x(1)^2 )];
+gradf_16 = @(x) [1*sin(x(1)) + 2*cos(x(1)); -cos(x(2)) + 2*sin(x(2))];
 
-Hessianf_Rosenbrock = @(x) [ 1200*x(1)^2 - 400*x(2) + 2 , -400*x(1); -400*x(1) , 200];
+%Hessianf_Rosenbrock = @(x) [ 1200*x(1)^2 - 400*x(2) + 2 , -400*x(1); -400*x(1) , 200];
+Hessianf_16 = @(x) [cos(x(1)) - 2*sin(x(1)), 0; 0, sin(x(2)) + 2*cos(x(2))]
 
 
 f= @(x,y)100*(y-x.^2).^2 + (1-x).^2;
