@@ -8,7 +8,6 @@ seed = min([341965, 343316, 284817]);
 
 rng(seed);
 
-
 h = 10^(-6); % alternative 2,4,6,8,10,12 
 esponenti = 2:2:12;
 H = 10.^(-esponenti); %vettore con gli esponenti da 2 a 12 pari
@@ -19,7 +18,7 @@ dimensioni = [10^3,10^4,10^5];
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETERS SETTINGS 
 
-rho = 0.7; %backtracking parameters
+rho = 0.6; %backtracking parameters
 c = 1e-4;
 btmax = 60;
 
