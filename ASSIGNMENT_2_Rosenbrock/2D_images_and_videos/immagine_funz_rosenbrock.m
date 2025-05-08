@@ -12,7 +12,9 @@ f_16_ = @(x,y) 1-cos(x) - sin(y) + 2*(1-cos(y) + sin(x));
 %X = [1.2,1.2; -1.2,1; 0,-8];
 %[x_opt, fx_opt, k, xseq, singular] = Nelder_Mead(X, f);
 x_opt_16 = [-atan(2), atan(1/2)];  %should be a minimum
+x_zero = [0,0]; %should be below the saddle point
 fx_opt_16 = f_16_(x_opt_16(1), x_opt_16(2));
+fx_zero = f_16_(x_zero(1),x_zero(2));
 
 
 %per il disegno
@@ -31,6 +33,7 @@ zlabel('f(x)');
 hold on; % Permette di aggiungere altri elementi sullo stesso grafico
 
 plot3(x_opt_16(1), x_opt_16(2), fx_opt_16, 'ro', 'MarkerSize', 15, 'MarkerFaceColor', 'r');
+plot3(x_zero(1), x_zero(2), 0, 'ro', 'MarkerSize', 15, 'MarkerFaceColor', 'b');
 
 % Creazione dell'etichetta con x_opt
 label = ['x ','opt = ','(' num2str(x_opt_16(1), '%.2f') ', ' num2str(x_opt_16(2), '%.2f') ', ' num2str(fx_opt_16, '%.2f') ')'];
