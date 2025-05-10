@@ -1,0 +1,17 @@
+test_function_index=2;
+
+method= "simplified_centered";
+
+
+adaptive = false; 
+
+rho = 0.8; %backtracking parameters
+c = 1e-3;
+btmax = 60;
+
+kmax = 1000; %stopping conditions
+tolgrad = 1e-3; 
+delta_step = 1e-5; 
+
+
+type_tao = 'Cholesky'; 
