@@ -8,7 +8,7 @@ seed = min([341965, 343316, 284817]);
 
 rng(seed);
 
-h = 10^(-6); % alternative 2,4,6,8,10,12 
+h = 10^(-2); % alternative 2,4,6,8,10,12 
 
 dimensioni = [10^3,10^4,10^5];
 
@@ -16,9 +16,9 @@ dimensioni = [10^3,10^4,10^5];
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETERS SETTINGS 
 
-rho = 0.6; %backtracking parameters
-c = 1e-3;
-btmax = 60;
+rho = 0.8; %backtracking parameters
+c = 1e-5;
+btmax = 40;
 
 kmax = 1000; %stopping conditions
 tolgrad = 1e-3; %it is relative to the dimension
@@ -338,7 +338,7 @@ for l = 1:1:3
 
     n = dimensioni(l);
 
-    [f3, gradf3, Hessf3] = third_function_3(n, "simplified_centered", h, true); % Problem 16
+    [f3, gradf3, Hessf3] = third_function_3(n, "simplified_forward", h, false); % Problem 16
     % [f3, gradf3, Hessf3] = third_function_3(n); % Problem 16
 
     % construction of the test point for f3
@@ -362,7 +362,7 @@ for l = 1:1:3
 
         disp(['**** MODIFIED NEWTON METHOD FOR THE THIRD FUNCTION, POINT ', num2str(i), ': STARTED *****']);
         tic;
-        [x3k, f3k, gradf3k_norm, k3, x3seq, f3seq, b3tseq, taoseq3, gradf_k3, cos_grad3, fail3] = ...
+        [x3k, f3k, gradf3k_norm, k3, x3seq, f3seq, b3tseq, taoseq3, gradf_k3, fail3] = ...
             Modified_Newton_method(X_f3(:,i), f3, gradf3, Hessf3, ...
             kmax, tolgrad, delta_step, c, rho, btmax, type_tao);
         t = toc;
@@ -448,6 +448,7 @@ for l = 1:1:3
     disp('******************************************')
 
     avg_f_best(l) = mean(fbest_iter);
+    mean(fbest_iter)
     avg_norm_grad(l) = mean(norm_grad_iter);
     avg_n_iter(l) = round(mean(iteration_3));
     avg_conv_time(l) = mean(conv_time_iter);

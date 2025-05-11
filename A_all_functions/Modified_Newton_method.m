@@ -1,4 +1,4 @@
-function [xk, fk, gradfk_norm, k, xseq, fseq, btseq, taoseq, gradfk, cos_grad, fail] = ...
+function [xk, fk, gradfk_norm, k, xseq, fseq, btseq, taoseq, gradfk, fail] = ...
     Modified_Newton_method(x0, f, gradf, Hessf, ...
     kmax, tolgrad, delta_step, c1, rho, btmax, type_tao)
 %
@@ -34,10 +34,8 @@ function [xk, fk, gradfk_norm, k, xseq, fseq, btseq, taoseq, gradfk, cos_grad, f
 % btseq = 1-by-k vector where elements are the number of backtracking
 % iterations at each optimization step.
 % gradfk = gradient of the last iteration
-% cos_grad = cosine between two consecutives gradients (used as stopping
-% criterion)
 % fail = string that indicates the kind of insuccess has occured:
-% "success", "btmax", "kmax", "cosine".
+% "success", "btmax", "kmax".
 %
 
 % Function handle for the armijo condition
@@ -57,7 +55,6 @@ gradfk = gradf(xk);
 k = 0;
 gradfk_norm = norm(gradfk);
 delta = sqrt(eps);
-cos_grad = 0;
 step_norm = delta_step + 1; %so that the first while condition is always satisfied
 fail = "success";
 while k < kmax && (gradfk_norm >= sqrt(n)*tolgrad || step_norm > sqrt(n)*delta_step)
@@ -116,13 +113,6 @@ while k < kmax && (gradfk_norm >= sqrt(n)*tolgrad || step_norm > sqrt(n)*delta_s
     % Update xk, fk, gradfk_norm
     xk = xnew;
     fk = fnew;
-    if mod(k,10) == mod(5,10) % to not check it at any iterations
-        cos_grad = abs(gradfk'*gradf(xk))./(norm(gradfk)*norm(gradf(xk)));
-        if cos_grad < 10^(-3) %it means that the new direction is still bad (similar to the previous one)
-            fail = "cosine";
-            break
-        end
-    end
     gradfk = gradf(xk);
     gradfk_norm = norm(gradfk);
     
