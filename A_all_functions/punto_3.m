@@ -8,7 +8,7 @@ seed = min([341965, 343316, 284817]);
 
 rng(seed);
 
-h = 10^(-2); % alternative 2,4,6,8,10,12 
+h = 10^(-6); % alternative 2,4,6,8,10,12 
 
 dimensioni = [10^3,10^4,10^5];
 
@@ -204,7 +204,7 @@ conv_rate_3 = zeros(10,1);
 % 
 %     n = dimensioni(l);
 % 
-%     [f2, gradf2, Hessf2] = second_function_75(n,"simplified_forward", h, false); % Problem 75
+%     [f2, gradf2, Hessf2] = second_function_75(n,"simplified_centered", h, true); % Problem 75
 % 
 %     % construction of the test point for f2
 % 
@@ -231,7 +231,7 @@ conv_rate_3 = zeros(10,1);
 % 
 %         disp(['**** MODIFIED NEWTON METHOD FOR THE SECOND FUNCTION, POINT ', num2str(i), ': STARTED *****']);
 %         tic;
-%         [x2k, f2k, gradf2k_norm, k2, x2seq, f2seq, b2tseq, taoseq2, gradf_k2, cos_grad2, fail2] = ...
+%         [x2k, f2k, gradf2k_norm, k2, x2seq, f2seq, b2tseq, taoseq2, gradf_k2, fail2] = ...
 %             Modified_Newton_method(X_f2(:,i), f2, gradf2, Hessf2, ...
 %             kmax, tolgrad, delta_step, c, rho, btmax, type_tao);
 %         t = toc;
@@ -318,9 +318,9 @@ conv_rate_3 = zeros(10,1);
 % T2 = table(avg_f_best', avg_norm_grad', avg_n_iter', avg_conv_time', n_success', ...
 %     avg_roc', avg_tao_used', 'VariableNames', clmn_labels, 'RowNames',row_names);
 % disp(T2)
-% 
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% THIRD FUNCTION (16)
 
 %statistics for the table plot

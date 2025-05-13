@@ -125,39 +125,72 @@ switch method
         
 
     case "simplified_centered"        
+        if adaptive == false
+            hi = @(x)h;
+        else
+            hi = @(x)h * abs(x);
+        end 
+
         deriv_j = cell(n,1);
-        deriv_j{1} = @(x) x(1)-1-200*(x(2)-x(1))^3 - 200*(x(2)-x(1))*h^2;
+        deriv_j{1} = @(x) x(1)-1-200*(x(2)-x(1))^3 - 200*(x(2)-x(1))*hi(x(1))^2;
         for k = 2:1:n-1
-            deriv_j{k} = @(x) 200*(k-1)^2*(x(k)-x(k-1))^3 - 200*k^2*(x(k+1)-x(k))^3 + 200*(k-1)^2*h^2*(x(k)-x(k-1)) + 200*(k)^2*h^2*(x(k)-x(k+1));
+            deriv_j{k} = @(x) 200*(k-1)^2*(x(k)-x(k-1))^3 - 200*k^2*(x(k+1)-x(k))^3 + 200*(k-1)^2*hi(x(k))^2*(x(k)-x(k-1)) + 200*(k)^2*hi(x(k))^2*(x(k)-x(k+1));
         end
-        deriv_j{n} = @(x) 200*(n-1)^2*(x(n)-x(n-1))^3 + 200*(n-1)^2*h^2*(x(n)-x(n-1));
+        deriv_j{n} = @(x) 200*(n-1)^2*(x(n)-x(n-1))^3 + 200*(n-1)^2*hi(x(n))^2*(x(n)-x(n-1));
         
         
         gradf2 = @(x) cell2mat(cellfun(@(deriv_j) deriv_j(x), deriv_j, 'UniformOutput', false));
         
         % computing the Hessian in sparse mode
+
+        if adaptive == false
+            hi = @(x)sqrt(h);
+        else
+            hi = @(x)sqrt(h) * abs(x);
+        end 
             
         A1 = cell(n,1);
-        B1 = cell(n,1);
-        C1 = cell(n,1);
+        C1 = cell(n,1);  % Solo sovradiagonale, sottodiagonale verrà calcolata per traslazione
         
-        A1{1} = @(x) 1+600*(x(2)-x(1))^2 +200*h^2; %diag
-        B1{1} = @(x) -600*(x(2)-x(1))^2 - 400*h^2; %under
-        C1{1} = @(x) 0; %forced by spdiags %over
-    
-        for i = 2:1:(n-1) 
-            A1{i} = @(x) 600*(i-1)^2*(x(i)-x(i-1))^2 + 600*i^2*(x(i+1)-x(i))^2 + 200*(k-1)^2*h^2 + 400*k^2*h^2; 
-            B1{i} = @(x) -600*i^2*(x(i+1)-x(i))^2 - 400*(k)^2*h^2;
-            C1{i} = @(x) -600*(i-1)^2*(x(i)-x(i-1))^2 - 400*(k-1)^2*h^2;
+        A1{1} = @(x) 1 + 600*(x(2)-x(1))^2 + 200*hi(x(1))^2; % Diagonale
+        C1{1} = @(x) -600*(x(2)-x(1))^2 - 400*hi(x(1))*hi(x(2));   % Sovradiagonale
+        
+        for i = 2:(n-1)
+            A1{i} = @(x) 600*(i-1)^2*(x(i)-x(i-1))^2 + 600*i^2*(x(i+1)-x(i))^2 + ...
+                        200*(i-1)^2*hi(x(i))^2 + 400*i^2*hi(x(i))^2;
+        
+            C1{i} = @(x) -600*(i-1)^2*(x(i)-x(i-1))^2 - 400*(i-1)^2*hi(x(i))*hi(x(i-1));
         end
-        A1{n} = @(x) 600*(n-1)^2*(x(n)-x(n-1))^2 + 200*(n-1)^2*h^2 + 400*n^2*h^2;
-        B1{n} = @(x) 0; %forced by spdiags
-        C1{n} = @(x) -600*(n-1)^2*(x(n)-x(n-1))^2  - 400*(n-1)^2*h^2; 
         
+        A1{n} = @(x) 600*(n-1)^2*(x(n)-x(n-1))^2 + 200*(n-1)^2*hi(x(n))^2 + 400*n^2*hi(x(n))^2;
+        C1{n} = @(x) 0;  % forzata da spdiags
         
-        Hessf2 = @(x) spdiags (cell2mat(cellfun(@(B1) B1(x), B1, 'UniformOutput', false)),-1, n,n)+ ...
-                        spdiags (cell2mat(cellfun(@(A1) A1(x), A1, 'UniformOutput', false)),0, n,n)+...
-                        spdiags (cell2mat(cellfun(@(C1) C1(x), C1, 'UniformOutput', false)),+1, n,n);
+        % Costruzione Hessiana con traslazione della sovradiagonale per ottenere la sottodiagonale
+        Hessf2 = @(x) ...
+        spdiags(cell2mat(cellfun(@(f) f(x), C1, 'UniformOutput', false)),-1,n,n) + ... % sottodiagonale = traslazione di C1
+        spdiags(cell2mat(cellfun(@(f) f(x), A1, 'UniformOutput', false)), 0, n,n) + ...
+        spdiags(cell2mat(cellfun(@(f) f(x), C1, 'UniformOutput', false)),+1,n,n);
+        % A1 = cell(n,1);
+        % B1 = cell(n,1);
+        % C1 = cell(n,1);
+        % 
+        % A1{1} = @(x) 1+600*(x(2)-x(1))^2 +200*h^2; %diag
+        % B1{1} = @(x) -600*(x(2)-x(1))^2 - 400*h^2; %under
+        % C1{1} = @(x) 0; %forced by spdiags %over
+        % 
+        % for i = 2:1:(n-1) 
+        %     A1{i} = @(x) 600*(i-1)^2*(x(i)-x(i-1))^2 + 600*i^2*(x(i+1)-x(i))^2 + 200*(k-1)^2*h^2 + 400*k^2*h^2; 
+        %     B1{i} = @(x) -600*i^2*(x(i+1)-x(i))^2 - 400*(k)^2*h^2;
+        %     C1{i} = @(x) -600*(i-1)^2*(x(i)-x(i-1))^2 - 400*(k-1)^2*h^2;
+        % end
+        % A1{n} = @(x) 600*(n-1)^2*(x(n)-x(n-1))^2 + 200*(n-1)^2*h^2 + 400*n^2*h^2;
+        % B1{n} = @(x) 0; %forced by spdiags
+        % C1{n} = @(x) -600*(n-1)^2*(x(n)-x(n-1))^2  - 400*(n-1)^2*h^2; 
+        % 
+        % 
+        % Hessf2 = @(x) spdiags (cell2mat(cellfun(@(B1) B1(x), B1, 'UniformOutput', false)),-1, n,n)+ ...
+        %                 spdiags (cell2mat(cellfun(@(A1) A1(x), A1, 'UniformOutput', false)),0, n,n)+...
+        %                 spdiags (cell2mat(cellfun(@(C1) C1(x), C1, 'UniformOutput', false)),+1, n,n);
     
        
 end
