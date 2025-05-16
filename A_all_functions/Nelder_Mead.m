@@ -80,12 +80,12 @@ values_indices(:,2) = new_indices; %this matrix contains 2 columns;
 
 %% the algorithm
 
-% f_bar = mean(values_indices(:,1)); % VARIANCE STOP CRIT
-% variance = sum((values_indices(:,1)-f_bar).^2)/n; %VARIANCE STOP CRIT
-while k < kmax &&... % check ix x_{1} and x_{n+1} are close or f(x_{1}) is close to f(x_{n+1})
+f_bar = mean(values_indices(:,1)); % VARIANCE STOP CRIT
+variance = sum((values_indices(:,1)-f_bar).^2)/n; %VARIANCE STOP CRIT
+% while k < kmax &&... % check ix x_{1} and x_{n+1} are close or f(x_{1}) is close to f(x_{n+1})
         (abs((values_indices(1,1)-values_indices(n+1,1))/values_indices(1,1)) > tol...
         || norm(X(values_indices(n+1,2),:)-X(values_indices(1,2),:),1)/norm(X(values_indices(1,2),:),1) > tol)
-% while k < kmax && variance > tol  % VARIANCE STOP CRIT
+while k < kmax && variance > tol  % VARIANCE STOP CRIT
     f_bar = mean(values_indices(:,1));
     variance = sum((values_indices(:,1)-f_bar).^2)/n;
     
