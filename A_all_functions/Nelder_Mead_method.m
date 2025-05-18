@@ -1,4 +1,4 @@
-function [x_opt, fx_opt, k, x_seq, f_seq, singular] = Nelder_Mead(X, f, varargin) 
+function [x_opt, fx_opt, k, x_seq, f_seq, singular] = Nelder_Mead_method(X, f, varargin) 
 
 %% INPUTS  
 % X = matrix which rows are the starting points of the simplex
@@ -101,9 +101,6 @@ while k < kmax && variance > tol  % VARIANCE STOP CRIT
         values_indices = sortrows(values_indices,1); %points reordered
         x_seq(k,:) = X(values_indices(1,2),:); % best point found so far
         f_seq(k) = f(x_seq(k,:));
-        % we know that x_seq(k,:) = x_seq(k-1,:) due to the if above, but
-        % we still want to save this point in order to have an
-        % understanding about the convergence speed of the method
         continue
     elseif f_xr < values_indices(1,1) %%% EXPANTION %%%
         xe = x_baricenter + chi*(xr-x_baricenter);

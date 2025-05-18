@@ -1,4 +1,4 @@
-function [f1, gradf1, Hessf1] = first_function_1(n, method, h, adaptive)
+function [f1, gradf1, Hessf1] = function_1(n, method, h, adaptive)
 
     % By default, this function calculates the gradient and the Hessian
     % using the exact method.

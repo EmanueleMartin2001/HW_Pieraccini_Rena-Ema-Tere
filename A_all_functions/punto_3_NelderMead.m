@@ -52,7 +52,7 @@ for l = 1:1:3
        end
     end
 
-    f1 = first_function_1(n); % Problem 1
+    f1 = function_1(n); % Problem 1
 
     for i = 1:1:11
         if i > 1 %if i == 1 the starting point is unchanged
@@ -143,7 +143,7 @@ disp(T1)
 %     x_f2 = -ones(n,1)*1.2;  %starting point
 %     x_f2(end) = -1;
 % 
-%     f2 = second_function_75(n); % Problem 75
+%     f2 = function_75(n); % Problem 75
 % 
 %     for i = 1:1:11
 %         if i > 1 % i ==1 leave the starting point unchanged
@@ -234,7 +234,7 @@ disp(T1)
 % 
 %     x_f3 = ones(n,1);
 % 
-%     f3 = third_function(n); % Problem 16
+%     f3 = function_16(n); % Problem 16
 % 
 %     for i = 1:1:11
 % 

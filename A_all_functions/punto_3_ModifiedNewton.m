@@ -8,7 +8,7 @@ seed = min([341965, 343316, 284817]);
 
 rng(seed);
 
-h = 10^(-6); % alternative 2,4,6,8,10,12 
+h = 10^(-2); % alternative 2,4,6,8,10,12 
 
 dimensioni = [10^3,10^4,10^5];
 
@@ -16,8 +16,8 @@ dimensioni = [10^3,10^4,10^5];
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETERS SETTINGS 
 
-rho = 0.8; %backtracking parameters
-c = 1e-5;
+rho = 0.5; %backtracking parameters
+c = 1e-4;
 btmax = 40;
 
 kmax = 1000; %stopping conditions
@@ -71,8 +71,8 @@ conv_rate_3 = zeros(10,1);
 % 
 %     n = dimensioni(l);
 % 
-%     % [f1,gradf1,Hessf1] = first_function_1(n, "simplified_forward", h, false); % Problem 1
-%     [f1,gradf1,Hessf1] = first_function_1(n); % Problem 1
+%     % [f1,gradf1,Hessf1] = function_1(n, "simplified_forward", h, false); % Problem 1
+%     [f1,gradf1,Hessf1] = function_1(n); % Problem 1
 % 
 % 
 %     % construction of the test point x0 for f1:
@@ -142,21 +142,22 @@ conv_rate_3 = zeros(10,1);
 %         fbest_iter(i) = f1k; %to save it in the table
 %         conv_time_iter(i) = t; %to save it in the table
 %         norm_grad_iter(i) = gradf1k_norm; %to save it in the table
+%         x1k
 %     end
-%     % if sum(result_first_function) > 0
-%     %     figure; 
-%     %     semilogy(1:success_k1, success_f1seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
-%     %     grid on;
-%     %     xlabel('Iterations (k)');
-%     %     ylabel('Values of the Rosenbrock function'); 
-%     % 
-%     %     figure;
-%     %     bar(1:success_k1, success_taoseq1, 'FaceColor', 'blue', 'EdgeColor', 'black')
-%     %     grid on;
-%     %     xlabel('Iterations (k)');
-%     %     ylabel('Tao values for the Rosenbrock function'); 
-%     % 
-%     % end
+%     if sum(result_first_function) > 0
+%         figure; 
+%         semilogy(1:k1, f1k, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
+%         grid on;
+%         xlabel('Iterations (k)');
+%         ylabel('Values of the Rosenbrock function'); 
+% 
+%         figure;
+%         bar(1:k1, f1k, 'FaceColor', 'blue', 'EdgeColor', 'black')
+%         grid on;
+%         xlabel('Iterations (k)');
+%         ylabel('Tao values for the Rosenbrock function'); 
+% 
+%     end
 %     disp(' ')
 %     disp(' ')
 %     disp(' ')
@@ -208,7 +209,8 @@ conv_rate_3 = zeros(10,1);
 % 
 %     n = dimensioni(l);
 % 
-%     [f2, gradf2, Hessf2] = second_function_75(n,"simplified_centered", h, true); % Problem 75
+%     % [f2, gradf2, Hessf2] = function_75(n,"simplified_centered", h, true); % Problem 75
+%     [f2, gradf2, Hessf2] = function_75(n); % Problem 75
 % 
 %     % construction of the test point for f2
 % 
@@ -281,17 +283,31 @@ conv_rate_3 = zeros(10,1);
 %         norm_grad_iter(i) = gradf2k_norm; %to save it in the table  
 %     end
 % 
-%     % figure; 
-%     % semilogy(1:success_k2, success_f2seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
-%     % grid on;
-%     % xlabel('Iterations (k)');
-%     % ylabel('Values of the function 75'); 
-%     % 
-%     % figure;
-%     % bar(1:success_k2, success_taoseq2, 'FaceColor', 'blue', 'EdgeColor', 'black')
-%     % grid on;
-%     % xlabel('Iterations (k)');
-%     % ylabel('Tao values for the function 75'); 
+%     figure; 
+%     f2seq = f2seq + abs(min(f2seq)) + 1e-3;
+%     semilogy(1:k2, f2seq, 'LineWidth', 2, 'Color', [0.6, 0.2, 0.8]);
+%     grid on;
+%     xlabel('Iterations (k)');
+%     ylabel('Values of the problem 75');
+%     set(gcf, 'Color', 'w');  % Imposta lo sfondo bianco
+%     text(0.5, 1.025, ['Dimension: n = ', num2str(n)], 'Units', 'normalized', ... %dimension on top of the plot
+%     'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom', 'FontSize', 12);
+%     disp(' ')
+%     disp(' ')
+%     disp(' ')
+%     disp('******************************************')
+% 
+%     %plot del tao
+%     figure;
+%     hold on;
+%     bar(1:k2, taoseq2 .* (taoseq2 >= 0), 'FaceColor', 'blue', 'EdgeColor', 'black'); % positive value
+%     bar(1:k2, taoseq2 .* (taoseq2 < 0), 'FaceColor', 'red', 'EdgeColor', 'black'); % negative
+%     set(gcf, 'Color', 'w');  % Imposta lo sfondo bianco
+%     hold off;
+%     grid on;
+%     xlabel('Iterations (k)');
+%     ylabel('Tao values for the problem 75'); 
+% 
 % 
 %     disp(' ')
 %     disp(' ')
@@ -342,8 +358,8 @@ for l = 1:1:3
 
     n = dimensioni(l);
 
-    [f3, gradf3, Hessf3] = third_function_3(n, "simplified_forward", h, false); % Problem 16
-    % [f3, gradf3, Hessf3] = third_function_3(n); % Problem 16
+    [f3, gradf3, Hessf3] = function_16(n, "simplified_forward", h, true); % Problem 16
+    % [f3, gradf3, Hessf3] = function_16(n); % Problem 16
 
     % construction of the test point for f3
 

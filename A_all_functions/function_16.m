@@ -1,4 +1,4 @@
-function [f3, gradf3, Hessf3] = third_function_3(n,method, h, adaptive)
+function [f3, gradf3, Hessf3] = function_16(n,method, h, adaptive)
 
     %method can be exact or simplified_forward
     if nargin == 1

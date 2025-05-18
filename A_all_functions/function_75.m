@@ -1,4 +1,4 @@
-function [f2, gradf2, Hessf2] = second_function_75(n, method, h, adaptive)
+function [f2, gradf2, Hessf2] = function_75(n, method, h, adaptive)
 
 %method can be exact or simplified_forward
 if nargin == 1
