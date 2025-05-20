@@ -81,9 +81,9 @@ switch method
         % computing the Hessian in sparse mode
 
         if adaptive == false
-            hi = @(x)sqrt(h);
+            hi = @(x)h;
         else
-            hi = @(x)sqrt(h) * abs(x);
+            hi = @(x)h * abs(x);
         end 
         A1 = cell(n,1); %diag
         B1 = cell(n,1); %lower diag
@@ -144,9 +144,9 @@ switch method
         % computing the Hessian in sparse mode
 
         if adaptive == false
-            hi = @(x)sqrt(h);
+            hi = @(x)h;
         else
-            hi = @(x)sqrt(h) * abs(x);
+            hi = @(x)h * abs(x);
         end 
             
         A1 = cell(n,1);
@@ -192,5 +192,4 @@ switch method
         %                 spdiags (cell2mat(cellfun(@(A1) A1(x), A1, 'UniformOutput', false)),0, n,n)+...
         %                 spdiags (cell2mat(cellfun(@(C1) C1(x), C1, 'UniformOutput', false)),+1, n,n);
     
-       
 end

@@ -266,9 +266,9 @@ f1 = @(x) sum(100 * (x(2:end) - x(1:end-1).^2).^2 + (x(1:end-1) - 1).^2);
             % computing the Hessian in sparse mode
             
             if adaptive == false
-                hi = @(x) sqrt(h);
+                hi = @(x) h;
             else
-                hi = @(x) sqrt(h) * abs(x);
+                hi = @(x) h * abs(x);
             end 
             A1 = cell(n,1); %diag
             B1 = cell(n,1); %lower diag

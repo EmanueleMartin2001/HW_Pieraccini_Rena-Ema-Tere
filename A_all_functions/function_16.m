@@ -66,9 +66,9 @@ function [f3, gradf3, Hessf3] = function_16(n,method, h, adaptive)
             %hessian 
             
             if adaptive == false
-                hi = @(x)sqrt(h); %for the hessian instead of h we use sqrt(h)
+                hi = @(x) h; %for the hessian instead of h we use sqrt(h)
             else
-                hi = @(x)sqrt(h) * abs(x);
+                hi = @(x) h * abs(x);
             end 
             A2 = cell(n,1);   % diagonal
             for i = 1:1:n-1
