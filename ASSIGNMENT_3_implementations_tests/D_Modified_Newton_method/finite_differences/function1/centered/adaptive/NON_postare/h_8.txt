@@ -1,0 +1,327 @@
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 1: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 1: FINISHED *****
+Time: 32.755 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 1
+f(xk): 3.9866
+gradfk_norm: 2.9892e-08
+N. of Iterations: 1452/20000;
+Rate of convergence: 2.0497;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 2: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 2: FINISHED *****
+Time: 32.1403 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 12
+f(xk): 3.9866
+gradfk_norm: 1.5721e-07
+N. of Iterations: 1453/20000;
+Rate of convergence: 2.105;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 3: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 3: FINISHED *****
+Time: 30.436 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 203
+f(xk): 3.9866
+gradfk_norm: 1.276e-06
+N. of Iterations: 1313/20000;
+Rate of convergence: 2.1583;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 4: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 4: FINISHED *****
+Time: 22.9798 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 761
+f(xk): 6.4509e-15
+gradfk_norm: 2.0648e-06
+N. of Iterations: 1001/20000;
+Rate of convergence: 1.9657;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 5: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 5: FINISHED *****
+Time: 35.2623 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 19
+f(xk): 3.9866
+gradfk_norm: 2.4705e-08
+N. of Iterations: 1460/20000;
+Rate of convergence: 2.0442;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 6: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 6: FINISHED *****
+Time: 33.9271 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 11
+f(xk): 3.9866
+gradfk_norm: 6.6013e-08
+N. of Iterations: 1455/20000;
+Rate of convergence: 2.0747;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 7: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 7: FINISHED *****
+Time: 34.1482 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 13
+f(xk): 3.9866
+gradfk_norm: 8.3956e-07
+N. of Iterations: 1455/20000;
+Rate of convergence: 2.1496;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 8: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 8: FINISHED *****
+Time: 33.7243 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 10
+f(xk): 3.9866
+gradfk_norm: 1.3538e-07
+N. of Iterations: 1453/20000;
+Rate of convergence: 2.0999;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 9: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 9: FINISHED *****
+Time: 26.4575 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 435
+f(xk): 3.9866
+gradfk_norm: 7.1028e-08
+N. of Iterations: 1094/20000;
+Rate of convergence: 2.0772;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 10: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 10: FINISHED *****
+Time: 23.5611 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 768
+f(xk): 3.9866
+gradfk_norm: 4.1406e-09
+N. of Iterations: 998/20000;
+Rate of convergence: 1.9647;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 11: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 11: FINISHED *****
+Time: 33.6941 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 11
+f(xk): 3.9866
+gradfk_norm: 1.1228e-07
+N. of Iterations: 1455/20000;
+Rate of convergence: 1.4711;
+************************************
+SUCCESS
+************************************
+ 
+ 
+ 
+ 
+******************************************
+**** RESULTS FOR THE FIRST FUNCTION *****
+N. of success: 11/11
+Mean N. of Iterations (in case of success): 1326/20000;
+Mean N. tao used (in case of success): 204
+Mean convergence rate (in case of success): 2.0145
+******************************************
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 1: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 1: FINISHED *****
+Time: 3002.6504 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 1
+f(xk): 2990.644
+gradfk_norm: 4.8357
+N. of Iterations: 10072/20000;
+Rate of convergence: 1.6969;
+************************************
+FAIL: maximum processing time reached
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 2: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 2: FINISHED *****
+Time: 3001.7303 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 5603
+f(xk): 3175.2304
+gradfk_norm: 3.3951
+N. of Iterations: 7508/20000;
+Rate of convergence: 1.5379;
+************************************
+FAIL: maximum processing time reached
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 3: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 3: FINISHED *****
+Time: 3001.2966 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 15
+f(xk): 4911.0263
+gradfk_norm: 4.8175
+N. of Iterations: 7282/20000;
+Rate of convergence: 1.6988;
+************************************
+FAIL: maximum processing time reached
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 4: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 4: FINISHED *****
+Time: 3001.274 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 18
+f(xk): 4905.6469
+gradfk_norm: 5.1939
+N. of Iterations: 7290/20000;
+Rate of convergence: 1.7559;
+************************************
+FAIL: maximum processing time reached
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 5: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 5: FINISHED *****
+Time: 3000.6734 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 16
+f(xk): 5251.5919
+gradfk_norm: 16.6974
+N. of Iterations: 6783/20000;
+Rate of convergence: 0.58668;
+************************************
+FAIL: maximum processing time reached
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 6: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 6: FINISHED *****
+Time: 3002.9159 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 14
+f(xk): 1551.3345
+gradfk_norm: 16.7799
+N. of Iterations: 12178/20000;
+Rate of convergence: 0.58527;
+************************************
+FAIL: maximum processing time reached
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 7: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 7: FINISHED *****
+Time: 3002.0501 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 15
+f(xk): 1512.279
+gradfk_norm: 5.196
+N. of Iterations: 12233/20000;
+Rate of convergence: 1.7558;
+************************************
+FAIL: maximum processing time reached
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 8: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 8: FINISHED *****
+Time: 1936.8504 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 6696
+f(xk): 3.9866
+gradfk_norm: 1.2082e-07
+N. of Iterations: 7772/20000;
+Rate of convergence: 2.0959;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 9: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 9: FINISHED *****
+Time: 2740.9984 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 4753
+f(xk): 3.9866
+gradfk_norm: 8.3788e-08
+N. of Iterations: 11034/20000;
+Rate of convergence: 2.083;
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 10: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 10: FINISHED *****
+Time: 3002.7128 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 13
+f(xk): 1572.1239
+gradfk_norm: 16.6789
+N. of Iterations: 12147/20000;
+Rate of convergence: 0.587;
+************************************
+FAIL: maximum processing time reached
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 11: STARTED *****
+**** MODIFIED NEWTON METHOD FOR THE 1 FUNCTION, POINT 11: FINISHED *****
+Time: 2340.1519 seconds
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+N. tao used: 5795
+f(xk): 3.9866
+gradfk_norm: 4.0196e-07
+N. of Iterations: 9353/20000;
+Rate of convergence: 2.1325;
+************************************
+SUCCESS
+************************************
+ 
+ 
+ 
+ 
+******************************************
+**** RESULTS FOR THE FIRST FUNCTION *****
+N. of success: 3/11
+Mean N. of Iterations (in case of success): 9386/20000;
+Mean N. tao used (in case of success): 5748
+Mean convergence rate (in case of success): 2.1038

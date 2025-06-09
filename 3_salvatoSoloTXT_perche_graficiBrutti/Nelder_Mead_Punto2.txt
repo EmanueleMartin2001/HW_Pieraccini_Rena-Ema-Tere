@@ -1,8 +1,0 @@
-**** NELDER MEAD METHOD: FINISHED *****
-Time: 0.0044699 seconds
-**** NELDER MEAD METHOD : RESULTS *****
-************************************
-x_opt: [1 1]
-f(x_opt): 0
-N. of Iterations: 129/1000;
-************************************

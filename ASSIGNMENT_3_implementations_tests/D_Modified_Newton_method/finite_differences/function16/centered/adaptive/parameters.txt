@@ -1,0 +1,19 @@
+%% PARAMETERS SETTINGS 
+
+test_function_index=3; 
+
+method= "simplified_centered";
+
+h = 10^(-8); % possible values 2,4,6,8,10,12 
+
+adaptive = true; 
+
+rho = 0.8; %backtracking parameters
+c = 1e-03;
+btmax = 60;
+
+kmax = 1500; %stopping conditions
+tolgrad = 1e-3; 
+delta_step = 1e-5; 
+  
+type_tao = 'Cholesky'; 
