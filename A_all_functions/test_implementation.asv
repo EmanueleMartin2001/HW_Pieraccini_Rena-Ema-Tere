@@ -8,7 +8,7 @@ seed = min([341965, 343316, 284817]);
 
 rng(seed);
 
-functions= {@first_function_1,@second_function_75,@third_function_3};
+functions= {@function_1,@function_75,@function_16};
 esponenti = 2:2:12;
 H = 10.^(-esponenti); %vettore con gli esponenti da 2 a 12 pari
 dimensioni = [10^3,10^4,10^5];
@@ -18,16 +18,16 @@ dimensioni = [10^3,10^4,10^5];
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETERS SETTINGS 
 
-test_function_index=2; % function to be tested. Possible values: 1,2,3
+test_function_index=3; % function to be tested. Possible values: 1,2,3
 
 method= "simplified_centered";
 
-h = 10^(-12); % possible values 2,4,6,8,10,12 
+h = 10^(-8); % possible values 2,4,6,8,10,12 
 
 adaptive = false; 
 
 rho = 0.8; %backtracking parameters
-c = 1e-03;
+c = 1e-3;
 btmax = 60;
 
 kmax = 1000; %stopping conditions
@@ -117,7 +117,7 @@ for l = 1:1:3
 
         disp(['**** MODIFIED NEWTON METHOD FOR THE ',num2str(test_function_index),' FUNCTION, POINT ', num2str(i), ': STARTED *****']);
         tic;
-        [x1k, f1k, gradf1k_norm, k1, x1seq,f1seq, bt1seq, taoseq1, gradf_k1, cos_grad1, fail1] = ...
+        [x1k, f1k, gradf1k_norm, k1, x1seq,f1seq, bt1seq, taoseq1, gradf_k1, fail1] = ...
             Modified_Newton_method(X_f1(:,i), f1, gradf1, Hessf1, ...
             kmax, tolgrad, delta_step , c, rho, btmax, type_tao);
         t = toc;

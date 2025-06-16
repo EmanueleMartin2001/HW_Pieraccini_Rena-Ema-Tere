@@ -18,16 +18,16 @@ dimensioni = [10^3,10^4,10^5];
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETERS SETTINGS 
 
-test_function_index=2; % function to be tested. Possible values: 1,2,3
+test_function_index=3; % function to be tested. Possible values: 1,2,3
 
 method= "simplified_centered";
 
-h = 10^(-8); % possible values 2,4,6,8,10,12 
+h = 10^(-12); % possible values 2,4,6,8,10,12 
 
 adaptive = false; 
 
 rho = 0.8; %backtracking parameters
-c = 1e-3;
+c = 1e-03;
 btmax = 60;
 
 kmax = 1000; %stopping conditions
