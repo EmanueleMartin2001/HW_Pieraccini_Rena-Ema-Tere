@@ -1,0 +1,21 @@
+
+test_function_index=1; % function to be tested. Possible values: 1,2,3
+
+method= "simplified_centered";
+
+h = 10^(-8); % possible values 2,4,6,8,10,12 
+
+adaptive = true; 
+
+rho = 0.75; %backtracking parameters
+c = 1e-02;
+btmax = 60;
+
+max_time=3000;
+kmax = 20000; %stopping conditions
+tolgrad = 1e-3; 
+delta_step = 1e-5; 
+
+% type_tao = 'Gershgorin'; % methods used to make the hessian def pos
+% type_tao = 'Eigen';      
+type_tao = 'Cholesky'; %usually works better
