@@ -18,26 +18,23 @@ dimensioni = [10^3,10^4,10^5];
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETERS SETTINGS 
 
-test_function_index=3; % function to be tested. Possible values: 1,2,3
+test_function_index=2; 
 
 method= "simplified_centered";
 
-h = 10^(-12); % possible values 2,4,6,8,10,12 
+h = 10^(-2); % possible values 2,4,6,8,10,12 
 
-adaptive = false; 
+adaptive = true; 
 
-rho = 0.8; %backtracking parameters
-c = 1e-03;
+rho = 0.65; %backtracking parameters
+c = 0.01;
 btmax = 60;
 
 kmax = 1000; %stopping conditions
 tolgrad = 1e-3; 
 delta_step = 1e-5; 
-
-% type_tao = 'Gershgorin'; % methods used to make the hessian def pos
-% type_tao = 'Eigen';      
-type_tao = 'Cholesky'; %usually works better
-
+  
+type_tao = 'Cholesky'; 
 
 % calling the method:
 
